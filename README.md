@@ -81,6 +81,21 @@ Los tokens de diseño están centralizados en `src/styles/tokens.css` y definen:
 
 La página de referencia visual (`DesignSystemShowcase`) muestra todos los componentes en sus variantes y estados.
 
+### Showcase de componentes
+
+La página de referencia visual muestra todos los componentes UI en sus variantes y estados. Se accede en modo desarrollo como vista principal.
+
+![PetCare Design System Showcase](docs/assets/design-system-showcase.png)
+
+| Componente | Ubicación | Descripción |
+|------------|-----------|-------------|
+| Button | `components/ui/Button` | Botón con variantes (primary, secondary, danger, ghost), tamaños (sm, md, lg) y estados (loading, disabled) | | Componente | Ubicación | Descripción |
+|------------|-----------|-------------|
+| Button | `components/ui/Button` | Variantes, tamaños y estados de carga |
+| Input | `components/ui/Input` | Campos de texto con validación y estados de error |
+| Card | `components/ui/Card` | Contenedor visual para agrupar información |
+| Badge | `components/ui/Badge` | Indicadores de estado (activo, pendiente, urgente) |
+
 ## Convenciones de código
 
 ### Commits
@@ -98,12 +113,3 @@ chore: update dependencies
 - `strict: true` habilitado
 - `verbatimModuleSyntax: true` — obliga a usar `import type` para tipos
 - Alias `@/` apunta a `src/` para imports limpios
-
-## Roadmap
-
-| Fase | Semanas | Objetivo |
-|------|---------|----------|
-| 1 — Fundación | 1-3 | Setup, sistema de diseño, layout, rutas |
-| 2 — Clínico core | 4-6 | Pacientes, citas, consultas (MVP) |
-| 3 — Dashboard y UX | 7-9 | Métricas, gráficos, responsive |
-| 4 — Offline y producción | 10-12 | IndexedDB, sync, testing, deploy |
