@@ -79,11 +79,9 @@ Los tokens de diseño están centralizados en `src/styles/tokens.css` y definen:
 - **Bordes y sombras:** border-radius y box-shadow consistentes
 - **Transiciones:** duraciones estandarizadas (fast, normal, slow)
 
-La página de referencia visual (`DesignSystemShowcase`) muestra todos los componentes en sus variantes y estados.
-
 ### Showcase de componentes
 
-La página de referencia visual muestra todos los componentes UI en sus variantes y estados. Se accede en modo desarrollo como vista principal.
+La página de referencia visual (`DesignSystemShowcase`) muestra todos los componentes en sus variantes y estados.
 
 ![PetCare Design System Showcase](docs/assets/design-system-showcase.png)
 
