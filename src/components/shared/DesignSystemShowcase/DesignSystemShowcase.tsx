@@ -1,4 +1,4 @@
-import { ButtonSection, InputSection } from './sections';
+import { ButtonSection, InputSection, CardSection } from './sections';
 import styles from './DesignSystemShowcase.module.css';
 
 /**
@@ -22,8 +22,8 @@ const DesignSystemShowcase = () => {
       {/* Aquí irán más secciones conforme se creen más componentes */}
       {/* -------- INPUT -------- */}
       <InputSection />
-      {/* <Section title="Card"> ... </Section> */}
-      {/* <Section title="Badge"> ... </Section> */}
+      <CardSection />
+      {/* <Badge />*/}
     </div>
   );
 };
