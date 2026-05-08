@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/Button';
+import { Button, Input } from '@/components/ui';
 import styles from './DesignSystemShowcase.module.css';
 import type { ReactNode } from 'react';
 
@@ -13,7 +13,7 @@ const DesignSystemShowcase = () => {
   return (
     <div className={styles.showcase}>
       <header className={styles.header}>
-        <h1>PetCare — Design System</h1>
+        <h1>PetCare — Sistema de diseño</h1>
         <p>Referencia visual de componentes UI</p>
       </header>
 
@@ -70,7 +70,61 @@ const DesignSystemShowcase = () => {
       </Section>
 
       {/* Aquí irán más secciones conforme se creen más componentes */}
-      {/* <Section title="Input"> ... </Section> */}
+      {/* -------- INPUT -------- */}
+      <Section title="Input">
+        <Subsection title="Default">
+          <div className={styles.row}>
+            <Input
+              label="Nombre de la mascota"
+              name="petName"
+              placeholder="Ej: Firulais"
+            />
+            <Input
+              label="Peso (kg)"
+              name="weight"
+              type="number"
+              placeholder="0.00"
+            />
+          </div>
+        </Subsection>
+
+        <Subsection title="Con hint">
+          <Input
+            label="Email del dueño"
+            name="email"
+            type="email"
+            placeholder="correo@ejemplo.com"
+            hint="Usaremos este correo para recordatorios de citas"
+          />
+        </Subsection>
+
+        <Subsection title="Con error">
+          <Input
+            label="Teléfono"
+            name="phone"
+            defaultValue="abc"
+            error="Debe ser un número de teléfono válido"
+          />
+        </Subsection>
+
+        <Subsection title="Disabled">
+          <Input
+            label="ID del paciente"
+            name="patientId"
+            value="PET-001"
+            disabled
+          />
+        </Subsection>
+
+        <Subsection title="Full width">
+          <Input
+            label="Dirección del propietario"
+            name="ownerAddress"
+            placeholder="Calle, número, colonia, ciudad..."
+            fullWidth
+          />
+        </Subsection>
+      </Section>
       {/* <Section title="Card"> ... </Section> */}
       {/* <Section title="Badge"> ... </Section> */}
     </div>
