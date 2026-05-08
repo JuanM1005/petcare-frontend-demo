@@ -105,9 +105,12 @@ Conforme crees más componentes, simplemente agregas filas a la tabla:
 Se sigue la convención [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
-feat(ui): add Input component with validation styles
-fix(patients): correct search filter logic
-chore: update dependencies
+feat     → nueva funcionalidad
+fix      → corrección de bug
+chore    → tareas de mantenimiento (config, dependencias)
+style    → cambios de formato (no lógica)
+refactor → reestructurar código sin cambiar funcionalidad
+docs     → documentación
 ```
 
 ### TypeScript
