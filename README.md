@@ -89,15 +89,11 @@ La página de referencia visual muestra todos los componentes UI en sus variante
 
 | Componente | Ubicación | Descripción |
 |------------|-----------|-------------|
-<<<<<<< HEAD
-| Button | `components/ui/Button` | Botón con variantes (primary, secondary, danger, ghost), tamaños (sm, md, lg) y estados (loading, disabled) | | Componente | Ubicación | Descripción |
-=======
 | Button | `components/ui/Button` | Botón con variantes (primary, secondary, danger, ghost), tamaños (sm, md, lg) y estados (loading, disabled) |
 
 Conforme crees más componentes, simplemente agregas filas a la tabla:
 
 | Componente | Ubicación | Descripción |
->>>>>>> main
 |------------|-----------|-------------|
 | Button | `components/ui/Button` | Variantes, tamaños y estados de carga |
 | Input | `components/ui/Input` | Campos de texto con validación y estados de error |
