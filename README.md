@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# PetCare Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para la gestión de clínicas veterinarias pequeñas y medianas.
 
-Currently, two official plugins are available:
+## Stack tecnológico
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Runtime:** Bun
+- **Build tool:** Vite
+- **Framework:** React 19
+- **Lenguaje:** TypeScript (strict mode)
+- **Estilos:** CSS Modules + Design Tokens
+- **Formato de código:** Prettier
 
-## React Compiler
+## Inicio rápido
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Instalar dependencias
+bun install
 
-## Expanding the ESLint configuration
+# Iniciar servidor de desarrollo
+bun run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Verificar tipos y construir para producción
+bun run build
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Formatear código
+bun run format
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Estructura del proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── app/                    # Router y componente raíz
+├── components/
+│   ├── ui/                 # Primitivos: Button, Input, Card, Modal
+│   ├── layout/             # Sidebar, Header, PageContainer
+│   └── shared/             # SearchBar, StatusBadge, ConfirmDialog
+├── features/
+│   ├── auth/               # Autenticación (components, hooks, context)
+│   ├── patients/           # Gestión de pacientes
+│   ├── appointments/       # Gestión de citas
+│   ├── consultations/      # Consultas clínicas
+│   └── dashboard/          # Dashboard operativo
+├── hooks/                  # Hooks globales (useDebounce, useOnlineStatus)
+├── lib/
+│   ├── api/                # Cliente HTTP y endpoints
+│   ├── db/                 # IndexedDB (Dexie) y sincronización
+│   └── utils/              # Formatters, validadores, constantes
+├── styles/                 # Tokens CSS y variables globales
+└── types/                  # Interfaces TypeScript compartidas
+```
+
+### Arquitectura feature-based
+
+El proyecto agrupa el código por **dominio de negocio**, no por tipo de archivo. Cada feature contiene sus propios componentes, hooks y páginas de forma autónoma.
+
+**Regla de dependencia:** los features importan de `components/` y `lib/`, pero nunca al revés.
+
+### Convención de componentes UI
+
+Cada componente primitivo sigue esta estructura:
+
+```
+components/ui/Button/
+├── Button.tsx              # Componente
+├── Button.types.ts         # Interface de props
+├── Button.module.css       # Estilos (CSS Modules)
+└── index.ts                # Barrel file
+```
+
+## Sistema de diseño
+
+Los tokens de diseño están centralizados en `src/styles/tokens.css` y definen:
+
+- **Colores:** paleta de marca, neutrales y semánticos (success, warning, danger)
+- **Tipografía:** Inter como fuente base, escala de tamaños en rem
+- **Espaciado:** escala de 4px (4, 8, 12, 16, 20, 24, 32...)
+- **Bordes y sombras:** border-radius y box-shadow consistentes
+- **Transiciones:** duraciones estandarizadas (fast, normal, slow)
+
+La página de referencia visual (`DesignSystemShowcase`) muestra todos los componentes en sus variantes y estados.
+
+## Convenciones de código
+
+### Commits
+
+Se sigue la convención [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+feat(ui): add Input component with validation styles
+fix(patients): correct search filter logic
+chore: update dependencies
+```
+
+### TypeScript
+
+- `strict: true` habilitado
+- `verbatimModuleSyntax: true` — obliga a usar `import type` para tipos
+- Alias `@/` apunta a `src/` para imports limpios
+
+## Roadmap
+
+| Fase | Semanas | Objetivo |
+|------|---------|----------|
+| 1 — Fundación | 1-3 | Setup, sistema de diseño, layout, rutas |
+| 2 — Clínico core | 4-6 | Pacientes, citas, consultas (MVP) |
+| 3 — Dashboard y UX | 7-9 | Métricas, gráficos, responsive |
+| 4 — Offline y producción | 10-12 | IndexedDB, sync, testing, deploy |
