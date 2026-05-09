@@ -9,3 +9,6 @@ export type { CardProps } from './Card/Card.types';
 
 export { default as Badge } from './Badge/Badge';
 export type { BadgeProps } from './Badge/Badge.types';
+
+export { default as Modal } from './Modal/Modal';
+export type { ModalProps } from './Modal/Modal.types';
