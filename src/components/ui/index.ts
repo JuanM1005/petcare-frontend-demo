@@ -6,3 +6,6 @@ export type { InputProps } from './Input/Input.types';
 
 export { default as Card } from './Card/Card';
 export type { CardProps } from './Card/Card.types';
+
+export { default as Badge } from './Badge/Badge';
+export type { BadgeProps } from './Badge/Badge.types';
