@@ -10,14 +10,56 @@
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
   margin-bottom: var(--spacing-10);
-  padding-bottom: var(--spacing-6);
-  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-8);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-600),
+    var(--color-primary-400)
+  );
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
 }
 
-.header h1 {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-2);
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  object-fit: contain;
+  background-color: #ffffffff;
+  padding: var(--spacing-0);
+  box-shadow: var(--shadow-lg);
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.headerText h1 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-inverse);
+  letter-spacing: -0.02em;
+}
+
+.headerText p {
+  font-size: var(--font-size-sm);
+  color: #ffffffcc;
+}
+
+.versionBadge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-600);
+  background-color: #ffffffe6;
+  padding: 2px var(--spacing-2);
+  border-radius: var(--radius-full);
+  margin-left: var(--spacing-2);
+  vertical-align: middle;
 }
 
 /* --- Secciones (por componente) --- */
