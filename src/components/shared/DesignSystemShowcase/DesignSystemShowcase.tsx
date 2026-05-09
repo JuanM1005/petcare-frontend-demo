@@ -4,6 +4,7 @@ import {
   CardSection,
   BadgeSection,
   ModalSection,
+  SpinnerSection,
 } from './sections';
 import petcareLogo from '@/assets/petcare-logo.png';
 import styles from './DesignSystemShowcase.module.css';
@@ -35,6 +36,7 @@ const DesignSystemShowcase = () => {
       <CardSection />
       <BadgeSection />
       <ModalSection />
+      <SpinnerSection />
     </div>
   );
 };
