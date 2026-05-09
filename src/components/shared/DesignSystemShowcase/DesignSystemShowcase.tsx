@@ -1,5 +1,6 @@
 import { ButtonSection, InputSection, CardSection } from './sections';
 import styles from './DesignSystemShowcase.module.css';
+import { BadgeSection } from './sections/BadgeSection';
 
 /**
  * Página de referencia visual del sistema de diseño.
@@ -23,7 +24,7 @@ const DesignSystemShowcase = () => {
       {/* -------- INPUT -------- */}
       <InputSection />
       <CardSection />
-      {/* <Badge />*/}
+      <BadgeSection />
     </div>
   );
 };
