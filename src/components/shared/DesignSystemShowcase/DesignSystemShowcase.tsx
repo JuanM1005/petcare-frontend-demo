@@ -22,7 +22,7 @@ const DesignSystemShowcase = () => {
         <img src={petcareLogo} alt="PetCare logo" className={styles.logo} />
         <div className={styles.headerText}>
           <h1>
-            PetCare Design System
+            PetCare - Design System
             <span className={styles.versionBadge}>v0.1</span>
           </h1>
           <p>Referencia visual de componentes UI</p>
