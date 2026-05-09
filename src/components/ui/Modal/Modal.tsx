@@ -23,8 +23,8 @@ const Modal = ({
   title,
   closeOnOverlay = true,
 }: ModalProps) => {
-  useEscapeKey(onClose); // Cierra el modal al presionar Escape
-  useLockScroll(); // Bloquea el scroll del fondo cuando el modal está abierto
+  useEscapeKey(onClose, isOpen); // Cierra el modal al presionar Escape
+  useLockScroll(isOpen); // Bloquea el scroll del fondo cuando el modal está abierto
 
   if (!isOpen) return null; // No renderiza nada si el modal está cerrado
 

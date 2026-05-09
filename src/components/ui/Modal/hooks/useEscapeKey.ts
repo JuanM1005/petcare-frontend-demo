@@ -7,13 +7,15 @@ import { useEffect } from 'react';
  * @param onEscape - Función a ejecutar al presionar Escape
  */
 
-export const useEscapeKey = (onEscape: () => void) => {
+export const useEscapeKey = (onEscape: () => void, isActive: boolean) => {
   useEffect(() => {
+    if (!isActive) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onEscape(); // Si se presiona la tecla Escape, ejecuta el callback proporcionado
     };
 
     document.addEventListener('keydown', handleKeyDown); // Escucha eventos de teclado a nivel de documento
     return () => document.removeEventListener('keydown', handleKeyDown); // Limpia el event listener al desmontar el componente
-  }, [onEscape]); // Re-ejecuta el efecto si cambia la función onEscape
+  }, [onEscape, isActive]); // Re-ejecuta el efecto si cambia la función onEscape o el estado isActive
 };
