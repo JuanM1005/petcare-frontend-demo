@@ -21,7 +21,7 @@ const DesignSystemShowcase = () => {
 
       {/* Aquí irán más secciones conforme se creen más componentes */}
       {/* -------- INPUT -------- */}
-      <InputSection />
+      <InputSection />  
       {/* <Section title="Card"> ... </Section> */}
       {/* <Section title="Badge"> ... </Section> */}
     </div>
