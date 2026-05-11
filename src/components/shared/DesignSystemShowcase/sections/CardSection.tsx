@@ -1,0 +1,126 @@
+import { Card } from '@/components/ui';
+import { Section, Subsection } from '../ShowcaseLayout';
+import styles from '../DesignSystemShowcase.module.css';
+
+export const CardSection = () => {
+  return (
+    <Section title="Card">
+      <Subsection title="Variantes">
+        <div className={styles.row}>
+          <Card variant="default">
+            <h3>Default</h3>
+            <p>Con sombra y borde</p>
+          </Card>
+          <Card variant="outline">
+            <h3>Outline</h3>
+            <p>Solo borde, sin sombra</p>
+          </Card>
+          <Card variant="ghost">
+            <h3>Ghost</h3>
+            <p>Sin borde ni sombra</p>
+          </Card>
+        </div>
+      </Subsection>
+
+      <Subsection title="Padding">
+        <div className={styles.row}>
+          <Card padding="none">
+            <div
+              style={{
+                padding: 'var(--spacing-3)',
+                background: 'var(--color-primary-50)',
+              }}
+            >
+              Padding none (contenido maneja su propio espacio)
+            </div>
+          </Card>
+          <Card padding="sm">
+            <p>Padding small</p>
+          </Card>
+          <Card padding="md">
+            <p>Padding medium (default)</p>
+          </Card>
+          <Card padding="lg">
+            <p>Padding large</p>
+          </Card>
+        </div>
+      </Subsection>
+
+      <Subsection title="Clickable">
+        <div className={styles.row}>
+          <Card isClickable onClick={() => alert('Card clickeada')}>
+            <h3>Paciente: Firulais</h3>
+            <p>Golden Retriever — 5 años</p>
+          </Card>
+          <Card
+            variant="outline"
+            isClickable
+            onClick={() => alert('Cita seleccionada')}
+          >
+            <h3>Cita #127</h3>
+            <p>Hoy 10:30 AM — Vacunación</p>
+          </Card>
+        </div>
+      </Subsection>
+
+      <Subsection title="Ejemplo real: Metric Card">
+        <div className={styles.row}>
+          <Card>
+            <p
+              style={{
+                fontSize: 'var(--font-size-sm)',
+                color: 'var(--color-text-secondary)',
+              }}
+            >
+              Citas hoy
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-size-2xl)',
+                fontWeight: 'var(--font-weight-bold)',
+              }}
+            >
+              12
+            </p>
+          </Card>
+          <Card>
+            <p
+              style={{
+                fontSize: 'var(--font-size-sm)',
+                color: 'var(--color-text-secondary)',
+              }}
+            >
+              Pacientes nuevos
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-size-2xl)',
+                fontWeight: 'var(--font-weight-bold)',
+              }}
+            >
+              3
+            </p>
+          </Card>
+          <Card>
+            <p
+              style={{
+                fontSize: 'var(--font-size-sm)',
+                color: 'var(--color-text-secondary)',
+              }}
+            >
+              Consultas completadas
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-size-2xl)',
+                fontWeight: 'var(--font-weight-bold)',
+              }}
+            >
+              8
+            </p>
+          </Card>
+        </div>
+      </Subsection>
+    </Section>
+  );
+};

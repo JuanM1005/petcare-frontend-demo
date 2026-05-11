@@ -1,4 +1,12 @@
-import { ButtonSection, InputSection } from './sections';
+import {
+  ButtonSection,
+  InputSection,
+  CardSection,
+  BadgeSection,
+  ModalSection,
+  SpinnerSection,
+} from './sections';
+import petcareLogo from '@/assets/petcare-logo.png';
 import styles from './DesignSystemShowcase.module.css';
 
 /**
@@ -8,22 +16,27 @@ import styles from './DesignSystemShowcase.module.css';
  * Uso temporal en desarrollo — se moverá a una ruta
  * protegida cuando configuremos React Router.
  */
+
 const DesignSystemShowcase = () => {
   return (
     <div className={styles.showcase}>
       <header className={styles.header}>
-        <h1>PetCare — Sistema de diseño</h1>
-        <p>Referencia visual de componentes UI</p>
+        <img src={petcareLogo} alt="PetCare logo" className={styles.logo} />
+        <div className={styles.headerText}>
+          <h1>
+            PetCare - Design System
+            <span className={styles.versionBadge}>v0.1</span>
+          </h1>
+          <p>Referencia visual de componentes UI</p>
+        </div>
       </header>
 
-      {/* -------- BUTTON -------- */}
       <ButtonSection />
-
-      {/* Aquí irán más secciones conforme se creen más componentes */}
-      {/* -------- INPUT -------- */}
-      <InputSection />  
-      {/* <Section title="Card"> ... </Section> */}
-      {/* <Section title="Badge"> ... </Section> */}
+      <InputSection />
+      <CardSection />
+      <BadgeSection />
+      <ModalSection />
+      <SpinnerSection />
     </div>
   );
 };

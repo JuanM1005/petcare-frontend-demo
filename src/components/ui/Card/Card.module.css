@@ -1,0 +1,57 @@
+/* ============================================
+   Card — Componente primitivo
+   Contenedor visual que agrupa y eleva contenido.
+   ============================================ */
+
+.card {
+  border-radius: var(--radius-xl);
+  background-color: var(--color-background);
+  transition:
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+/* --- Variantes --- */
+
+.default {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.outline {
+  border: 1px solid var(--color-border);
+}
+
+.ghost {
+  border: 1px solid transparent;
+}
+
+/* --- Padding --- */
+
+.none {
+  padding: 0;
+}
+.sm {
+  padding: var(--spacing-3);
+}
+.md {
+  padding: var(--spacing-6);
+}
+.lg {
+  padding: var(--spacing-8);
+}
+
+/* --- Clickable --- */
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-hover);
+}
+
+.clickable:active {
+  box-shadow: var(--shadow-sm);
+}
