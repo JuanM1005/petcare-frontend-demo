@@ -1,17 +1,29 @@
+import clsx from 'clsx';
 import type { InputProps } from './Input.types';
-import styles from './Input.module.css';
+import {
+  inputBase,
+  inputError,
+  inputErrorMessage,
+  inputFieldContainer,
+  inputHint,
+  inputLabel,
+  inputLeftIcon,
+  inputWithLeftIcon,
+  inputWrapper,
+} from './Input.styles';
 
 /**
  * Input primitivo del sistema de diseño.
- * Soporta label, estados de error, hint y ícono izquierdo.
  *
- * @example
- * <Input
- *   label="Nombre de la mascota"
- *   name="petName"
- *   placeholder="Ej: Firulais"
- *   error="El nombre es obligatorio"
- * />
+ * Usa Tailwind CSS para los estilos visuales y clsx
+ * para manejar estados condicionales.
+ *
+ * Soporta:
+ * - label: texto visible del campo
+ * - error: mensaje de error y estilo visual de error
+ * - hint: texto de ayuda
+ * - leftIcon: ícono decorativo a la izquierda
+ * - fullWidth: ocupa todo el ancho disponible
  */
 
 const Input = ({
@@ -23,38 +35,43 @@ const Input = ({
   className,
   ...rest
 }: InputProps) => {
-  // Necesitamos un id para conectar el <label> con el <input>.
-  // Si nos pasan id como prop, lo usamos. Si no, usamos name como fallback.
+  // Conecta el label con el input.
+  // Si no se recibe id, usamos name como alternativa.
   const inputId = rest.id ?? rest.name;
 
-  const wrapperClasses = [styles.wrapper, fullWidth ? styles.fullWidth : '']
-    .filter(Boolean)
-    .join(' ');
-
-  const inputClasses = [
-    styles.input,
-    error ? styles.inputError : '',
-    leftIcon ? styles.hasLeftIcon : '',
-    className ?? '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <div className={wrapperClasses}>
-      <label htmlFor={inputId} className={styles.label}>
+    <div className={clsx(inputWrapper, fullWidth && 'w-full')}>
+      <label htmlFor={inputId} className={inputLabel}>
         {label}
       </label>
 
-      <div className={styles.fieldContainer}>
-        {leftIcon && <span className={styles.leftIcon}>{leftIcon}</span>}
-        <input id={inputId} className={inputClasses} {...rest} />
+      <div className={inputFieldContainer}>
+        {leftIcon && <span className={inputLeftIcon}>{leftIcon}</span>}
+
+        <input
+          id={inputId}
+          className={clsx(
+            inputBase,
+            error && inputError,
+            leftIcon && inputWithLeftIcon,
+            className,
+          )}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={
+            error || hint ? `${inputId}-description` : undefined
+          }
+          {...rest}
+        />
       </div>
 
       {error ? (
-        <span className={styles.error}>{error}</span>
+        <span id={`${inputId}-description`} className={inputErrorMessage}>
+          {error}
+        </span>
       ) : hint ? (
-        <span className={styles.hint}>{hint}</span>
+        <span id={`${inputId}-description`} className={inputHint}>
+          {hint}
+        </span>
       ) : null}
     </div>
   );

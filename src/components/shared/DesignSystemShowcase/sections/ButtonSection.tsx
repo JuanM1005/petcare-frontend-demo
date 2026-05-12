@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui';
 import { Section, Subsection } from '../ShowcaseLayout';
-import styles from '../DesignSystemShowcase.module.css';
+import { showcaseRow } from '../DesignSystemShowcase.styles';
 
 export const ButtonSection = () => {
   return (
     <Section title="Button">
       <Subsection title="Variantes">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="danger">Danger</Button>
@@ -15,7 +15,7 @@ export const ButtonSection = () => {
       </Subsection>
 
       <Subsection title="Tamaños">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Button variant="primary" size="sm">
             Small
           </Button>
@@ -29,7 +29,7 @@ export const ButtonSection = () => {
       </Subsection>
 
       <Subsection title="Estados">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Button variant="primary" disabled>
             Disabled
           </Button>

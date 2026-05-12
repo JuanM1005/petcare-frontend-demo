@@ -27,6 +27,7 @@ const Button = ({
   isLoading = false,
   fullWidth = false,
   disabled,
+  className,
   ...rest
 }: ButtonProps) => {
   return (
@@ -37,6 +38,7 @@ const Button = ({
         buttonSizes[size],
         fullWidth && 'w-full',
         isLoading && 'pointer-events-none cursor-not-allowed opacity-60',
+        className,
       )}
       disabled={disabled || isLoading}
       {...rest}

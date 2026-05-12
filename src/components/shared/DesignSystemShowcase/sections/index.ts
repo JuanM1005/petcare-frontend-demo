@@ -4,3 +4,4 @@ export * from './CardSection';
 export * from './BadgeSection';
 export * from './ModalSection';
 export * from './SpinnerSection';
+export * from './TextareaSection';

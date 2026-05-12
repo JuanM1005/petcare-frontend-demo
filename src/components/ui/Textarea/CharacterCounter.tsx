@@ -1,4 +1,9 @@
-import styles from './Textarea.module.css';
+import clsx from 'clsx';
+import {
+  characterCounterBase,
+  characterCounterDanger,
+  characterCounterWarning,
+} from './Textarea.styles';
 
 interface CharacterCounterProps {
   current: number;
@@ -7,28 +12,24 @@ interface CharacterCounterProps {
 
 /**
  * Contador de caracteres interno del Textarea.
- * Cambia de color progresivamente al acercarse al límite.
  *
- * - Menos del 80%: gris (normal)
- * - Entre 80% y 99%: amarillo (warning)
- * - 100%: rojo (danger)
+ * Cambia de color cuando el usuario se acerca al límite.
  */
+
 const CharacterCounter = ({ current, max }: CharacterCounterProps) => {
   const percentage = current / max;
 
-  const counterClasses = [
-    styles.counter,
-    percentage >= 1
-      ? styles.counterDanger
-      : percentage >= 0.8
-        ? styles.counterWarning
-        : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <span className={counterClasses}>
+    <span
+      className={clsx(
+        characterCounterBase,
+        percentage >= 1
+          ? characterCounterDanger
+          : percentage >= 0.8
+            ? characterCounterWarning
+            : undefined,
+      )}
+    >
       {current}/{max}
     </span>
   );

@@ -3,17 +3,13 @@ import type { MouseEvent } from 'react';
 import type { ModalProps } from './Modal.types';
 import { useEscapeKey, useLockScroll } from './hooks';
 import ModalHeader from './ModalHeader';
-import styles from './Modal.module.css';
+import { modalBody, modalContainer, modalOverlay } from './Modal.styles';
 
 /**
  * Modal primitivo del sistema de diseño.
- * Se renderiza con Portal fuera del árbol DOM principal.
- * Soporta cierre con Escape, click en overlay y botón ✕.
  *
- * @example
- * <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Confirmar">
- *   <p>¿Estás seguro?</p>
- * </Modal>
+ * Se renderiza con Portal fuera del árbol principal.
+ * Soporta cierre con Escape, click en overlay y botón de cerrar.
  */
 
 const Modal = ({
@@ -23,24 +19,31 @@ const Modal = ({
   title,
   closeOnOverlay = true,
 }: ModalProps) => {
-  useEscapeKey(onClose, isOpen); // Cierra el modal al presionar Escape
-  useLockScroll(isOpen); // Bloquea el scroll del fondo cuando el modal está abierto
+  useEscapeKey(onClose, isOpen);
+  useLockScroll(isOpen);
 
-  if (!isOpen) return null; // No renderiza nada si el modal está cerrado
+  if (!isOpen) return null;
 
   const handleOverlayClick = () => {
-    if (closeOnOverlay) onClose(); // Cierra el modal al hacer clic en el overlay
+    if (closeOnOverlay) onClose();
   };
 
-  const handleModalClick = (e: MouseEvent) => {
-    e.stopPropagation(); // Evita que el clic dentro del modal cierre el modal
+  const handleModalClick = (event: MouseEvent) => {
+    event.stopPropagation();
   };
 
   return createPortal(
-    <div className={styles.overlay} onClick={handleOverlayClick}>
-      <div className={styles.modal} onClick={handleModalClick}>
+    <div className={modalOverlay} onClick={handleOverlayClick}>
+      <div
+        className={modalContainer}
+        onClick={handleModalClick}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={title ? 'modal-title' : undefined}
+      >
         {title && <ModalHeader title={title} onClose={onClose} />}
-        <div className={styles.body}>{children}</div>
+
+        <div className={modalBody}>{children}</div>
       </div>
     </div>,
     document.body,

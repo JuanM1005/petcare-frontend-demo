@@ -1,12 +1,12 @@
 import { Input } from '@/components/ui';
 import { Section, Subsection } from '../ShowcaseLayout';
-import styles from '../DesignSystemShowcase.module.css';
+import { showcaseRow } from '../DesignSystemShowcase.styles';
 
 export const InputSection = () => {
   return (
     <Section title="Input">
       <Subsection title="Default">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Input
             label="Nombre de la mascota"
             name="petName"

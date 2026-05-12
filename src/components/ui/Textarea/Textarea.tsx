@@ -1,19 +1,23 @@
+import clsx from 'clsx';
 import type { TextareaProps } from './Textarea.types';
 import CharacterCounter from './CharacterCounter';
-import styles from './Textarea.module.css';
+import {
+  textareaBase,
+  textareaError,
+  textareaErrorMessage,
+  textareaFooter,
+  textareaHint,
+  textareaLabel,
+  textareaWrapper,
+} from './Textarea.styles';
 
 /**
  * Textarea primitivo del sistema de diseño.
- * Campo multilínea con label, error, hint y contador de caracteres.
  *
- * @example
- * <Textarea
- *   label="Notas de consulta"
- *   name="notes"
- *   placeholder="Observaciones..."
- *   maxLength={500}
- * />
+ * Campo multilínea con label, error, hint y contador
+ * de caracteres cuando se usa maxLength.
  */
+
 const Textarea = ({
   label,
   error,
@@ -23,36 +27,38 @@ const Textarea = ({
   ...rest
 }: TextareaProps) => {
   const textareaId = rest.id ?? rest.name;
-
   const currentLength = rest.value ? String(rest.value).length : 0;
   const { maxLength } = rest;
 
-  const wrapperClasses = [styles.wrapper, fullWidth ? styles.fullWidth : '']
-    .filter(Boolean)
-    .join(' ');
-
-  const textareaClasses = [
-    styles.textarea,
-    error ? styles.textareaError : '',
-    className ?? '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <div className={wrapperClasses}>
-      <label htmlFor={textareaId} className={styles.label}>
+    <div className={clsx(textareaWrapper, fullWidth && 'w-full')}>
+      <label htmlFor={textareaId} className={textareaLabel}>
         {label}
       </label>
 
-      <textarea id={textareaId} className={textareaClasses} {...rest} />
+      <textarea
+        id={textareaId}
+        className={clsx(textareaBase, error && textareaError, className)}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={
+          error || hint ? `${textareaId}-description` : undefined
+        }
+        {...rest}
+      />
 
       {(error || hint || maxLength) && (
-        <div className={styles.footer}>
+        <div className={textareaFooter}>
           {error ? (
-            <span className={styles.error}>{error}</span>
+            <span
+              id={`${textareaId}-description`}
+              className={textareaErrorMessage}
+            >
+              {error}
+            </span>
           ) : hint ? (
-            <span className={styles.hint}>{hint}</span>
+            <span id={`${textareaId}-description`} className={textareaHint}>
+              {hint}
+            </span>
           ) : (
             <span />
           )}

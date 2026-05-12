@@ -1,12 +1,12 @@
 import { Card } from '@/components/ui';
 import { Section, Subsection } from '../ShowcaseLayout';
-import styles from '../DesignSystemShowcase.module.css';
+import { showcaseRow } from '../DesignSystemShowcase.styles';
 
 export const CardSection = () => {
   return (
     <Section title="Card">
       <Subsection title="Variantes">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Card variant="default">
             <h3>Default</h3>
             <p>Con sombra y borde</p>
@@ -23,14 +23,9 @@ export const CardSection = () => {
       </Subsection>
 
       <Subsection title="Padding">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Card padding="none">
-            <div
-              style={{
-                padding: 'var(--spacing-3)',
-                background: 'var(--color-primary-50)',
-              }}
-            >
+            <div className="p-3 bg-blue-50">
               Padding none (contenido maneja su propio espacio)
             </div>
           </Card>
@@ -47,7 +42,7 @@ export const CardSection = () => {
       </Subsection>
 
       <Subsection title="Clickable">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Card isClickable onClick={() => alert('Card clickeada')}>
             <h3>Paciente: Firulais</h3>
             <p>Golden Retriever — 5 años</p>
@@ -64,60 +59,18 @@ export const CardSection = () => {
       </Subsection>
 
       <Subsection title="Ejemplo real: Metric Card">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Card>
-            <p
-              style={{
-                fontSize: 'var(--font-size-sm)',
-                color: 'var(--color-text-secondary)',
-              }}
-            >
-              Citas hoy
-            </p>
-            <p
-              style={{
-                fontSize: 'var(--font-size-2xl)',
-                fontWeight: 'var(--font-weight-bold)',
-              }}
-            >
-              12
-            </p>
+            <p className="text-sm text-neutral-500">Citas hoy</p>
+            <p className="text-2xl font-bold">12</p>
           </Card>
           <Card>
-            <p
-              style={{
-                fontSize: 'var(--font-size-sm)',
-                color: 'var(--color-text-secondary)',
-              }}
-            >
-              Pacientes nuevos
-            </p>
-            <p
-              style={{
-                fontSize: 'var(--font-size-2xl)',
-                fontWeight: 'var(--font-weight-bold)',
-              }}
-            >
-              3
-            </p>
+            <p className="text-sm text-neutral-500">Pacientes nuevos</p>
+            <p className="text-2xl font-bold">3</p>
           </Card>
           <Card>
-            <p
-              style={{
-                fontSize: 'var(--font-size-sm)',
-                color: 'var(--color-text-secondary)',
-              }}
-            >
-              Consultas completadas
-            </p>
-            <p
-              style={{
-                fontSize: 'var(--font-size-2xl)',
-                fontWeight: 'var(--font-weight-bold)',
-              }}
-            >
-              8
-            </p>
+            <p className="text-sm text-neutral-500">Consultas completadas</p>
+            <p className="text-2xl font-bold">8</p>
           </Card>
         </div>
       </Subsection>

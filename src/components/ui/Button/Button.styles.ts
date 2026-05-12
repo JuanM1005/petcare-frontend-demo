@@ -4,12 +4,10 @@ export const buttonBase =
 export const buttonVariants = {
   primary:
     'border-blue-500 bg-blue-500 text-white hover:border-blue-600 hover:bg-[var(--color-primary-600)] active:bg-blue-700',
-  secondary:
-    'border-slate-200 bg-white text-slate-700 hover:bg-slate-50',
+  secondary: 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100',
   danger:
     'border-red-600 bg-red-600 text-white hover:border-red-700 hover:bg-red-700',
-  ghost:
-    'border-transparent bg-transparent text-blue-500 hover:bg-slate-100',
+  ghost: 'border-transparent bg-transparent text-blue-500 hover:bg-slate-100',
 };
 
 export const buttonSizes = {

@@ -7,28 +7,39 @@ import {
   SpinnerSection,
 } from './sections';
 import petcareLogo from '@/assets/petcare-logo.png';
-import styles from './DesignSystemShowcase.module.css';
 import { TextareaSection } from './sections/TextareaSection';
+import {
+  showcaseDescription,
+  showcaseHeader,
+  showcaseHeaderText,
+  showcaseLogo,
+  showcasePage,
+  showcaseTitle,
+  showcaseVersionBadge,
+} from './DesignSystemShowcase.styles';
 
 /**
  * Página de referencia visual del sistema de diseño.
- * Muestra todos los componentes UI en sus variantes y estados.
  *
- * Uso temporal en desarrollo — se moverá a una ruta
- * protegida cuando configuremos React Router.
+ * Muestra todos los componentes UI en sus variantes y estados.
+ * Por ahora funciona como vitrina temporal de desarrollo.
  */
 
 const DesignSystemShowcase = () => {
   return (
-    <div className={styles.showcase}>
-      <header className={styles.header}>
-        <img src={petcareLogo} alt="PetCare logo" className={styles.logo} />
-        <div className={styles.headerText}>
-          <h1>
+    <div className={showcasePage}>
+      <header className={showcaseHeader}>
+        <img src={petcareLogo} alt="PetCare logo" className={showcaseLogo} />
+
+        <div className={showcaseHeaderText}>
+          <h1 className={showcaseTitle}>
             PetCare - Design System
-            <span className={styles.versionBadge}>v0.1</span>
+            <span className={showcaseVersionBadge}>v0.1</span>
           </h1>
-          <p>Referencia visual de componentes UI</p>
+
+          <p className={showcaseDescription}>
+            Referencia visual de componentes UI
+          </p>
         </div>
       </header>
 
