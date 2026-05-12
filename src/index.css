@@ -1,22 +1,37 @@
-/* ============================================
-   PetCare — Estilos globales y reset
-   ============================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import './styles/tokens.css';
 
+@theme {
+  --font-sans: var(--font-family);
+}
+
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: 16px;
+    font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
+    min-height: 100vh;
+    margin: 0;
     font-family: var(--font-family);
-    background-color: var(--color-surface);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
     color: var(--color-text-primary);
+    background-color: var(--color-surface);
+  }
+
+  #root {
+    min-height: 100vh;
   }
 
   input,
@@ -28,5 +43,10 @@
 
   button {
     cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
   }
 }
