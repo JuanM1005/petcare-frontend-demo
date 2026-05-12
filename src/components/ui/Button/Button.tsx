@@ -1,14 +1,23 @@
+import clsx from 'clsx';
 import type { ButtonProps } from './Button.types';
-import styles from './Button.module.css';
+import {
+  buttonBase,
+  buttonSizes,
+  buttonVariants,
+  spinnerStyles,
+} from './Button.styles';
 
 /**
  * Botón primitivo del sistema de diseño.
- * Soporta variantes visuales, tamaños y estado de carga.
  *
- * @example
- * <Button variant="primary" size="md" onClick={handleSave}>
- *   Guardar paciente
- * </Button>
+ * Ahora usa Tailwind CSS para los estilos visuales
+ * y clsx para manejar clases condicionales.
+ *
+ * Conceptos importantes:
+ * - Las clases base siempre se aplican.
+ * - Las variantes cambian el color y comportamiento visual.
+ * - Los tamaños cambian padding y tamaño de texto.
+ * - fullWidth, isLoading y disabled son estados condicionales.
  */
 
 const Button = ({
@@ -18,28 +27,21 @@ const Button = ({
   isLoading = false,
   fullWidth = false,
   disabled,
-  className,
   ...rest
 }: ButtonProps) => {
-  // Combina las clases CSS dinámicamente según las props recibidas
-  const buttonClasses = [
-    styles.button,
-    styles[variant],
-    styles[size],
-    isLoading ? styles.loading : '',
-    fullWidth ? styles.fullWidth : '',
-    className ?? '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
     <button
-      className={buttonClasses}
+      className={clsx(
+        buttonBase,
+        buttonVariants[variant],
+        buttonSizes[size],
+        fullWidth && 'w-full',
+        isLoading && 'pointer-events-none cursor-not-allowed opacity-60',
+      )}
       disabled={disabled || isLoading}
       {...rest}
     >
-      {isLoading && <span className={styles.spinner} />}
+      {isLoading && <span className={spinnerStyles} />}
       {children}
     </button>
   );
