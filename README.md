@@ -83,7 +83,7 @@ Los tokens de diseño están centralizados en `src/styles/tokens.css` y definen:
 
 La página de referencia visual (`DesignSystemShowcase`) muestra todos los componentes en sus variantes y estados.
 
-![PetCare Design System Showcase](docs/assets/design-system-showcase.png)
+![PetCare Design System Showcase](docs/assets/design-system-showcase-v2.png)
 
 | Componente | Ubicación | Descripción |
 |------------|-----------|-------------|
