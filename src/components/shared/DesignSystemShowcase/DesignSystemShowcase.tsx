@@ -8,6 +8,7 @@ import {
 } from './sections';
 import petcareLogo from '@/assets/petcare-logo.png';
 import styles from './DesignSystemShowcase.module.css';
+import { TextareaSection } from './sections/TextareaSection';
 
 /**
  * Página de referencia visual del sistema de diseño.
@@ -37,6 +38,7 @@ const DesignSystemShowcase = () => {
       <BadgeSection />
       <ModalSection />
       <SpinnerSection />
+      <TextareaSection />
     </div>
   );
 };
