@@ -40,7 +40,7 @@ export const ButtonSection = () => {
             Disabled
           </Button>
           <Button variant="danger" isLoading>
-            Eliminando...
+            Eliminando…
           </Button>
         </div>
       </Subsection>

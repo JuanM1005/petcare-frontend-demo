@@ -28,12 +28,19 @@ const Modal = ({
     if (closeOnOverlay) onClose();
   };
 
-  const handleModalClick = (event: MouseEvent) => {
+  const handleModalClick = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
 
   return createPortal(
-    <div className={modalOverlay} onClick={handleOverlayClick}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <button
+        type="button"
+        className={modalOverlay}
+        onClick={handleOverlayClick}
+        aria-label="Cerrar modal"
+      />
+
       <div
         className={modalContainer}
         onClick={handleModalClick}

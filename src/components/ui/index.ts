@@ -16,5 +16,3 @@ export type { ModalProps } from './Modal/Modal.types';
 export { default as Spinner } from './Spinner/Spinner';
 export type { SpinnerProps } from './Spinner/Spinner.types';
 
-export { default as Textarea } from './Textarea/Textarea';
-export type { TextareaProps } from './Textarea/Textarea.types';

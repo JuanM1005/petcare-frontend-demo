@@ -7,7 +7,7 @@ import {
   SpinnerSection,
 } from './sections';
 import petcareLogo from '@/assets/petcare-logo.png';
-import { TextareaSection } from './sections/TextareaSection';
+
 import {
   showcaseDescription,
   showcaseHeader,
@@ -49,7 +49,6 @@ const DesignSystemShowcase = () => {
       <BadgeSection />
       <ModalSection />
       <SpinnerSection />
-      <TextareaSection />
     </div>
   );
 };

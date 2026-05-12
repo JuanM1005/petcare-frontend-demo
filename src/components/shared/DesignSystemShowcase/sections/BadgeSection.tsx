@@ -32,7 +32,7 @@ export const BadgeSection = () => {
             <div>
               <h3>Firulais</h3>
               <p className="text-sm text-neutral-500">
-                Golden Retriever — 5 años
+                Golden Retriever, 5 años
               </p>
             </div>
             <Badge variant="success">Activo</Badge>
@@ -44,19 +44,19 @@ export const BadgeSection = () => {
         <div className="flex flex-col gap-3">
           <Card padding="sm">
             <div className="flex justify-between items-center">
-              <span>10:30 AM — Firulais — Vacunación</span>
+              <span>10:30 AM, Firulais, Vacunación</span>
               <Badge variant="success">Completada</Badge>
             </div>
           </Card>
           <Card padding="sm">
             <div className="flex justify-between items-center">
-              <span>11:00 AM — Luna — Revisión general</span>
+              <span>11:00 AM, Luna, Revisión general</span>
               <Badge variant="warning">Pendiente</Badge>
             </div>
           </Card>
           <Card padding="sm">
             <div className="flex justify-between items-center">
-              <span>11:30 AM — Rocky — Emergencia</span>
+              <span>11:30 AM, Rocky, Emergencia</span>
               <Badge variant="danger">Urgente</Badge>
             </div>
           </Card>

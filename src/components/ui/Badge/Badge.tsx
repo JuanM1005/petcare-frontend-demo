@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { BadgeProps } from './Badge.types';
 import { badgeBase, badgeSizes, badgeVariants } from './Badge.styles';
-import BadgePing from './BadePing';
+import BadgePing from './BadgePing';
 
 /**
  * Badge primitivo del sistema de diseño.
