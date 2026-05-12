@@ -45,7 +45,7 @@ export const CardSection = () => {
         <div className={showcaseRow}>
           <Card isClickable onClick={() => alert('Card clickeada')}>
             <h3>Paciente: Firulais</h3>
-            <p>Golden Retriever — 5 años</p>
+            <p>Golden Retriever, 5 años</p>
           </Card>
           <Card
             variant="outline"
@@ -53,7 +53,7 @@ export const CardSection = () => {
             onClick={() => alert('Cita seleccionada')}
           >
             <h3>Cita #127</h3>
-            <p>Hoy 10:30 AM — Vacunación</p>
+            <p>Hoy 10:30 AM, Vacunación</p>
           </Card>
         </div>
       </Subsection>
