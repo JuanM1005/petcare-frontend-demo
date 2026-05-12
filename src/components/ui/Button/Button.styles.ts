@@ -1,9 +1,9 @@
 export const buttonBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg border font-medium leading-tight transition-colors disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60';
+  'inline-flex items-center justify-center gap-2 rounded-lg border font-medium leading-tight transition-all duration-300 ease-out active:scale-95 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60';
 
 export const buttonVariants = {
   primary:
-    'border-blue-500 bg-blue-500 text-white hover:border-blue-600 hover:bg-blue-700',
+    'border-blue-500 bg-blue-500 text-white hover:border-blue-600 hover:bg-[var(--color-primary-600)] active:bg-blue-700',
   secondary:
     'border-slate-200 bg-white text-slate-700 hover:bg-slate-50',
   danger:
@@ -19,4 +19,4 @@ export const buttonSizes = {
 };
 
 export const spinnerStyles =
-  'h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent';
+  'h-4   w-4 animate-spin rounded-full border-2 border-current border-t-transparent';
