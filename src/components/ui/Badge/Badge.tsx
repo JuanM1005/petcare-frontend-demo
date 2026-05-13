@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import type { BadgeProps } from './Badge.types';
-import { badgeBase, badgeSizes, badgeVariants } from './Badge.styles';
+import { badgeBase, badgePulse, badgeSizes, badgeVariants } from './Badge.styles';
 import BadgePing from './BadgePing';
 
 /**
@@ -14,15 +14,12 @@ const Badge = ({
   children,
   variant = 'neutral',
   size = 'sm',
+  pulse = false,
   ...rest
 }: BadgeProps) => {
   return (
     <span
-      className={clsx(
-        badgeBase,
-        badgeVariants[variant],
-        badgeSizes[size],
-      )}
+      className={clsx(badgeBase, badgeVariants[variant], badgeSizes[size], pulse && badgePulse)}
       {...rest}
     >
       <BadgePing variant={variant} />

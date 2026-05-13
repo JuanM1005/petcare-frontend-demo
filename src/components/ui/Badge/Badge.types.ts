@@ -8,4 +8,5 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
   variant?: BadgeVariant;
   size?: BadgeSize;
+  pulse?: boolean;
 }

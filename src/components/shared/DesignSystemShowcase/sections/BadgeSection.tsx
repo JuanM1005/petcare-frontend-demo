@@ -35,7 +35,7 @@ export const BadgeSection = () => {
                 Golden Retriever, 5 años
               </p>
             </div>
-            <Badge variant="success">Activo</Badge>
+            <Badge variant="success" size='md'>Activo</Badge>
           </div>
         </Card>
       </Subsection>
@@ -57,7 +57,7 @@ export const BadgeSection = () => {
           <Card padding="sm">
             <div className="flex justify-between items-center">
               <span>11:30 AM, Rocky, Emergencia</span>
-              <Badge variant="danger">Urgente</Badge>
+              <Badge variant="danger" pulse>Urgente</Badge>
             </div>
           </Card>
         </div>

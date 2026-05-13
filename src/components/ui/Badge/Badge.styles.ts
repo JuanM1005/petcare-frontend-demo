@@ -1,17 +1,21 @@
-export const badgeBase = 'inline-flex items-center gap-2 rounded-full font-medium';
+export const badgeBase =
+  'inline-flex items-center gap-2 rounded-full border font-medium';
 
 export const badgeVariants = {
-  success: 'bg-green-50 text-green-700',
-  warning: 'bg-amber-50 text-amber-700',
-  danger: 'bg-red-50 text-red-700',
-  info: 'bg-blue-50 text-blue-700',
-  neutral: 'bg-slate-100 text-slate-600',
+  success: 'border-green-200 bg-green-50 text-green-700',
+  warning: 'border-amber-200 bg-amber-50 text-amber-700',
+  danger: 'border-red-200 bg-red-50 text-red-700',
+  info: 'border-blue-200 bg-blue-50 text-blue-700',
+  neutral: 'border-slate-200 bg-slate-100 text-slate-600',
 };
 
 export const badgeSizes = {
   sm: 'px-2 py-0.5 text-xs',
   md: 'px-2.5 py-1 text-sm',
 };
+
+export const badgePulse =
+  'motion-safe:animate-pulse';
 
 export const badgePingVariants = {
   success: {
