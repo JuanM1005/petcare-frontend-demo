@@ -54,7 +54,7 @@ const Modal = ({
         <div className={modalBodyStyles}>{children}</div>
       </section>
     </div>,
-    document.body
+    document.body,
   );
 };
 
