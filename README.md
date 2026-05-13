@@ -245,7 +245,6 @@ Este patrón mantiene los componentes legibles y evita repetir clases largas dir
 |------------|-----------|-------------|
 | Button | `components/ui/Button` | Botón con variantes, tamaños, estado loading, disabled y ancho completo |
 | Input | `components/ui/Input` | Campo de texto con label, hint, error, disabled, fullWidth e ícono izquierdo |
-| Textarea | `components/ui/Textarea` | Campo multilínea con label, hint, error y contador de caracteres |
 | Card | `components/ui/Card` | Contenedor visual con variantes `default`, `outline` y `ghost` |
 | Badge | `components/ui/Badge` | Etiquetas de estado con variantes semánticas |
 | Spinner | `components/ui/Spinner` | Indicador de carga con tamaños y label opcional |
