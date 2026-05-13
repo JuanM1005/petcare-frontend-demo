@@ -1,27 +1,24 @@
+import clsx from 'clsx';
 import type { SpinnerProps } from './Spinner.types';
-import styles from './Spinner.module.css';
+import {
+  spinnerBase,
+  spinnerLabel,
+  spinnerSizes,
+  spinnerWrapper,
+} from './Spinner.styles';
 
 /**
  * Spinner primitivo del sistema de diseño.
- * Indicador de carga con tamaño configurable y label opcional.
  *
- * @example
- * <Spinner size="md" label="Cargando pacientes..." />
+ * Indicador visual de carga con tamaño configurable
+ * y texto opcional para dar contexto al usuario.
  */
 
-const Spinner = ({ size = 'md', label, className, ...rest }: SpinnerProps) => {
-  const wrapperClasses = [styles.wrapper, className ?? '']
-    .filter(Boolean)
-    .join(' ');
-
-  const spinnerClasses = [styles.spinner, styles[size]]
-    .filter(Boolean)
-    .join(' ');
-
+const Spinner = ({ size = 'md', label, ...rest }: SpinnerProps) => {
   return (
-    <div className={wrapperClasses} role="status" {...rest}>
-      <div className={spinnerClasses} />
-      {label && <span className={styles.label}>{label}</span>}
+    <div className={spinnerWrapper} role="status" {...rest}>
+      <div className={clsx(spinnerBase, spinnerSizes[size])} />
+      {label && <span className={spinnerLabel}>{label}</span>}
     </div>
   );
 };

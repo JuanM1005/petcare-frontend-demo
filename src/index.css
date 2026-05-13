@@ -1,81 +1,62 @@
 /* ============================================
-   PetCare — Estilos globales y reset
+   PetCare — Estilos globales
    ============================================ */
 
+/* 1. Fuente externa */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Tailwind CSS v4 */
+@import 'tailwindcss';
+
+/* 3. Plugin de animaciones */
+/* Habilita: animate-in, fade-in, zoom-in-*, slide-in-from-*, etc. */
+@plugin 'tailwindcss-animate';
+
+/* 4. Tokens de identidad del proyecto */
 @import './styles/tokens.css';
 
-/* --- Reset base --- */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ============================================
+   Tema — conecta tokens con escala de Tailwind
+   ============================================ */
+
+@theme {
+  /* Conecta --font-family con font-sans de Tailwind */
+  /* Resultado: clase font-sans aplica Inter en toda la app */
+  --font-sans: var(--font-family);
 }
 
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* ============================================
+   Estilos base globales
+   Solo lo que Tailwind Preflight no cubre.
+   ============================================ */
 
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-primary);
-  background-color: var(--color-surface);
-}
+@layer base {
+  html {
+    /* Base rem — define la escala de todo el proyecto */
+    font-size: 16px;
+    /* Suavizado de fuente — Preflight no lo incluye */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* --- Tipografía base --- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
-}
+  body {
+    /* Color de texto y fondo — identidad visual de PetCare */
+    color: var(--color-text-primary);
+    background-color: var(--color-surface);
+    /* Tipografía base global */
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
 
-h1 {
-  font-size: var(--font-size-3xl);
-}
-h2 {
-  font-size: var(--font-size-2xl);
-}
-h3 {
-  font-size: var(--font-size-xl);
-}
+  #root {
+    /* Garantiza que la app ocupe toda la pantalla */
+    min-height: 100svh;
+  }
 
-p {
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
-}
-
-a {
-  color: var(--color-primary-500);
-  text-decoration: none;
-}
-
-/* --- Utilidades de formularios --- */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-/* --- Utilidad: focus visible accesible --- */
-:focus-visible {
-  outline: 2px solid var(--color-primary-500);
-  outline-offset: 2px;
+  :focus-visible {
+    /* Accesibilidad: anillo de foco visible para navegación con teclado */
+    /* Clave en una app clínica donde el veterinario puede navegar con Tab */
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
 }

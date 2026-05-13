@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
 import { Button, Modal } from '@/components/ui';
 import { Section, Subsection } from '../ShowcaseLayout';
-import styles from '../DesignSystemShowcase.module.css';
+import { showcaseRow } from '../DesignSystemShowcase.styles';
 
 export const ModalSection = () => {
   // Cada modal necesita su propio estado
@@ -12,7 +13,7 @@ export const ModalSection = () => {
   return (
     <Section title="Modal">
       <Subsection title="Básico">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Button onClick={() => setBasicOpen(true)}>Abrir modal básico</Button>
 
           <Modal
@@ -20,7 +21,7 @@ export const ModalSection = () => {
             onClose={() => setBasicOpen(false)}
             title="Modal básico"
           >
-            <p>
+            <p className="text-sm text-slate-600">
               Este es un modal con título, botón de cerrar y cierre con Escape o
               click en el overlay.
             </p>
@@ -29,7 +30,7 @@ export const ModalSection = () => {
       </Subsection>
 
       <Subsection title="Sin cierre por overlay">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Button variant="secondary" onClick={() => setNoOverlayOpen(true)}>
             Abrir modal protegido
           </Button>
@@ -40,7 +41,7 @@ export const ModalSection = () => {
             title="Acción requerida"
             closeOnOverlay={false}
           >
-            <p>
+            <p className="text-sm text-slate-600">
               Este modal solo se cierra con el botón ✕ o con Escape. Clickear
               fuera no lo cierra. Útil para acciones que requieren una decisión
               explícita.
@@ -50,7 +51,7 @@ export const ModalSection = () => {
       </Subsection>
 
       <Subsection title="Ejemplo real: Confirmación de eliminación">
-        <div className={styles.row}>
+        <div className={showcaseRow}>
           <Button variant="danger" onClick={() => setConfirmOpen(true)}>
             Eliminar paciente
           </Button>
@@ -60,20 +61,16 @@ export const ModalSection = () => {
             onClose={() => setConfirmOpen(false)}
             title="¿Eliminar paciente?"
           >
-            <p style={{ marginBottom: 'var(--spacing-4)' }}>
+            <p className="mb-4 text-sm text-slate-600">
               Estás a punto de eliminar a <strong>Firulais</strong> y todo su
               historial clínico. Esta acción no se puede deshacer.
             </p>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                gap: 'var(--spacing-3)',
-              }}
-            >
+
+            <div className="flex justify-end gap-3">
               <Button variant="secondary" onClick={() => setConfirmOpen(false)}>
                 Cancelar
               </Button>
+
               <Button
                 variant="danger"
                 onClick={() => {

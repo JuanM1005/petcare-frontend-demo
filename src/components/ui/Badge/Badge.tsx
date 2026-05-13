@@ -1,33 +1,29 @@
+import clsx from 'clsx';
 import type { BadgeProps } from './Badge.types';
-import styles from './Badge.module.css';
+import { badgeBase, badgePulse, badgeSizes, badgeVariants } from './Badge.styles';
+import BadgePing from './BadgePing';
 
 /**
  * Badge primitivo del sistema de diseño.
- * Etiqueta visual de estado, siempre inline.
  *
- * @example
- * <Badge variant="success">Activo</Badge>
- * <Badge variant="danger" size="sm">Urgente</Badge>
+ * Etiqueta visual para representar estados breves:
+ * éxito, advertencia, error, información o estado neutral.
  */
 
 const Badge = ({
   children,
   variant = 'neutral',
   size = 'sm',
-  className,
+  pulse = false,
   ...rest
 }: BadgeProps) => {
-  const badgeClasses = [
-    styles.badge,
-    styles[variant],
-    styles[size],
-    className ?? '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <span className={badgeClasses} {...rest}>
+    <span
+      className={clsx(badgeBase, badgeVariants[variant], badgeSizes[size], pulse && badgePulse)}
+      {...rest}
+    >
+      <BadgePing variant={variant} />
+
       {children}
     </span>
   );
