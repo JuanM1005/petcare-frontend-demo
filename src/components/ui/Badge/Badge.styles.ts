@@ -1,4 +1,4 @@
-export const badgeBase = 'inline-flex items-center rounded-full font-medium';
+export const badgeBase = 'inline-flex items-center gap-2 rounded-full font-medium';
 
 export const badgeVariants = {
   success: 'bg-green-50 text-green-700',

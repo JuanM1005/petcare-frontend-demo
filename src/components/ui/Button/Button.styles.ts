@@ -1,5 +1,5 @@
 export const buttonBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg border font-medium leading-tight transition-all duration-300 ease-out active:scale-95 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60';
+  'inline-flex items-center justify-center gap-2 rounded-lg border font-medium leading-tight transition-all duration-300 ease-out active:scale-95 cursor-pointer cyrsdisabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60';
 
 export const buttonVariants = {
   primary:

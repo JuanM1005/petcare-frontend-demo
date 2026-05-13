@@ -1,51 +1,61 @@
+/* ============================================
+   PetCare — Estilos globales
+   ============================================ */
+
+/* 1. Fuente externa */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Tailwind CSS v4 */
 @import 'tailwindcss';
+
+/* 3. Plugin de animaciones */
+/* Habilita: animate-in, fade-in, zoom-in-*, slide-in-from-*, etc. */
+@plugin 'tailwindcss-animate';
+
+/* 4. Tokens de identidad del proyecto */
 @import './styles/tokens.css';
 
+/* ============================================
+   Tema — conecta tokens con escala de Tailwind
+   ============================================ */
+
 @theme {
+  /* Conecta --font-family con font-sans de Tailwind */
+  /* Resultado: clase font-sans aplica Inter en toda la app */
   --font-sans: var(--font-family);
 }
 
-@layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+/* ============================================
+   Estilos base globales
+   Solo lo que Tailwind Preflight no cubre.
+   ============================================ */
 
+@layer base {
   html {
+    /* Base rem — define la escala de todo el proyecto */
     font-size: 16px;
-    font-family: var(--font-family);
+    /* Suavizado de fuente — Preflight no lo incluye */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    min-height: 100vh;
-    margin: 0;
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
+    /* Color de texto y fondo — identidad visual de PetCare */
     color: var(--color-text-primary);
     background-color: var(--color-surface);
+    /* Tipografía base global */
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
   }
 
   #root {
-    min-height: 100vh;
-  }
-
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-  }
-
-  button {
-    cursor: pointer;
+    /* Garantiza que la app ocupe toda la pantalla */
+    min-height: 100svh;
   }
 
   :focus-visible {
+    /* Accesibilidad: anillo de foco visible para navegación con teclado */
+    /* Clave en una app clínica donde el veterinario puede navegar con Tab */
     outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
   }

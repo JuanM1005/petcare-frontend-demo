@@ -22,7 +22,6 @@ const Badge = ({
         badgeBase,
         badgeVariants[variant],
         badgeSizes[size],
-        'gap-1.5',
       )}
       {...rest}
     >

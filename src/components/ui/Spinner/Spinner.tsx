@@ -16,7 +16,7 @@ import {
 
 const Spinner = ({ size = 'md', label, ...rest }: SpinnerProps) => {
   return (
-    <div className={clsx(spinnerWrapper)} role="status" {...rest}>
+    <div className={spinnerWrapper} role="status" {...rest}>
       <div className={clsx(spinnerBase, spinnerSizes[size])} />
       {label && <span className={spinnerLabel}>{label}</span>}
     </div>
