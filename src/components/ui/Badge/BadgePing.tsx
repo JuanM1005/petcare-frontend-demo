@@ -19,10 +19,7 @@ const BadgePing = ({ variant }: BadgePingProps) => {
       />
 
       <span
-        className={clsx(
-          'relative inline-flex size-2 rounded-full',
-          colors.dot,
-        )}
+        className={clsx('relative inline-flex size-2 rounded-full', colors.dot)}
       />
     </span>
   );
