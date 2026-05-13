@@ -1,9 +1,17 @@
 import type { ReactNode } from 'react';
-import styles from './DesignSystemShowcase.module.css';
+import {
+  showcaseSection,
+  showcaseSectionContent,
+  showcaseSectionTitle,
+  showcaseSubsection,
+  showcaseSubsectionTitle,
+} from './DesignSystemShowcase.styles';
 
 /**
  * Componentes de layout internos del Showcase.
- * Proveen estructura visual consistente para cada sección.
+ *
+ * Proveen estructura visual consistente para cada sección
+ * del sistema de diseño.
  */
 
 export function Section({
@@ -14,9 +22,9 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>{title}</h2>
-      <div className={styles.sectionContent}>{children}</div>
+    <section className={showcaseSection}>
+      <h2 className={showcaseSectionTitle}>{title}</h2>
+      <div className={showcaseSectionContent}>{children}</div>
     </section>
   );
 }
@@ -29,8 +37,8 @@ export function Subsection({
   children: ReactNode;
 }) {
   return (
-    <div className={styles.subsection}>
-      <h3 className={styles.subsectionTitle}>{title}</h3>
+    <div className={showcaseSubsection}>
+      <h3 className={showcaseSubsectionTitle}>{title}</h3>
       {children}
     </div>
   );

@@ -1,9 +1,9 @@
-import styles from './Modal.module.css';
-
-interface ModalHeaderProps {
-  title: string;
-  onClose: () => void;
-}
+import type { ModalHeaderProps } from './Modal.types';
+import {
+  modalHeaderStyles,
+  modalTitleStyles,
+  modalCloseButtonStyles,
+} from './Modal.styles';
 
 /**
  * Header interno del Modal.
@@ -12,16 +12,17 @@ interface ModalHeaderProps {
 
 const ModalHeader = ({ title, onClose }: ModalHeaderProps) => {
   return (
-    <div className={styles.header}>
-      <h2 className={styles.title}>{title}</h2>
+    <header className={modalHeaderStyles}>
+      <h2 className={modalTitleStyles}>{title}</h2>
       <button
-        className={styles.closeButton}
+        type="button"
+        className={modalCloseButtonStyles}
         onClick={onClose}
         aria-label="Cerrar modal"
       >
         ✕
       </button>
-    </div>
+    </header>
   );
 };
 

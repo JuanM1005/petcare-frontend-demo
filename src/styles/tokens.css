@@ -10,9 +10,7 @@
   --color-primary-100: #d9ecff;
   --color-primary-200: #bce0ff;
   --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
   --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
 
   /* --- Neutrales (grises) --- */
   --color-neutral-50: #f8fafc;
@@ -51,8 +49,7 @@
   --color-text-muted: var(--color-neutral-400);
   --color-text-inverse: #ffffff;
 
-  /* --- Tipografía --- */
-  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family: 'Inter', system-ui, sans-serif;
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
   --font-size-base: 1rem; /* 16px */

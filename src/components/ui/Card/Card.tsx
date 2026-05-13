@@ -1,15 +1,17 @@
+import clsx from 'clsx';
 import type { CardProps } from './Card.types';
-import styles from './Card.module.css';
+import {
+  cardBase,
+  cardClickable,
+  cardPaddings,
+  cardVariants,
+} from './Card.styles';
 
 /**
  * Card primitivo del sistema de diseño.
- * Contenedor visual que agrupa y eleva contenido.
  *
- * @example
- * <Card variant="default" padding="md">
- *   <h3>Firulais</h3>
- *   <p>Golden Retriever — 5 años</p>
- * </Card>
+ * Contenedor visual para agrupar contenido relacionado.
+ * Puede mostrarse con borde/sombra, solo borde o estilo ghost.
  */
 
 const Card = ({
@@ -20,18 +22,17 @@ const Card = ({
   className,
   ...rest
 }: CardProps) => {
-  const cardClasses = [
-    styles.card,
-    styles[variant],
-    styles[padding],
-    isClickable ? styles.clickable : '',
-    className ?? '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <div className={cardClasses} {...rest}>
+    <div
+      className={clsx(
+        cardBase,
+        cardVariants[variant],
+        cardPaddings[padding],
+        isClickable && cardClickable,
+        className,
+      )}
+      {...rest}
+    >
       {children}
     </div>
   );
