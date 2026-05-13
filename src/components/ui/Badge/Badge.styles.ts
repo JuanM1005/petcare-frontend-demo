@@ -14,8 +14,7 @@ export const badgeSizes = {
   md: 'px-2.5 py-1 text-sm',
 };
 
-export const badgePulse =
-  'motion-safe:animate-pulse';
+export const badgePulse = 'motion-safe:animate-pulse';
 
 export const badgePingVariants = {
   success: {

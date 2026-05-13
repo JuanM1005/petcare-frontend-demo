@@ -12,7 +12,25 @@ PetCare busca ofrecer una interfaz moderna, clara y escalable para administrar i
 - **Lenguaje:** TypeScript (strict mode)
 - **Estilos:** Tailwind CSS v4 + Design Tokens
 - **Utilidades de clases:** clsx
+- **Animaciones:** tailwindcss-animate
 - **Formato de código:** Prettier
+
+## Instalación de dependencias base
+
+Si el proyecto se configura desde cero, instala las dependencias principales con Bun:
+
+```bash
+# Tailwind CSS v4 con Vite
+bun add -d tailwindcss @tailwindcss/vite
+
+# Utilidad para clases condicionales
+bun add clsx
+
+# Plugin de animaciones para Tailwind
+bun add -d tailwindcss-animate
+```
+
+El plugin `tailwindcss-animate` permite usar clases como `animate-in`, `fade-in`, `zoom-in-95`, `slide-in-from-bottom-4` y otras utilidades útiles para componentes como modales, dropdowns, alerts y transiciones de entrada.
 
 ## Inicio rápido
 
