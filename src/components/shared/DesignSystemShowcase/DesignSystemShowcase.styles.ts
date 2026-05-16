@@ -1,7 +1,8 @@
-export const showcasePage = 'mx-auto max-w-[960px] px-6 py-8';
+export const showcasePage =
+  'mx-auto grid min-h-svh w-full max-w-[1200px] grid-cols-1 gap-6 px-6 py-8 lg:grid-cols-2';
 
 export const showcaseHeader =
-  'mb-10 flex items-center justify-center gap-6 rounded-2xl bg-linear-to-br from-blue-600 to-blue-400 p-8 shadow-lg';
+  'flex flex-col items-center justify-center gap-6 rounded-2xl bg-linear-to-br from-blue-600 to-blue-400 p-8 text-center shadow-lg lg:col-span-2 lg:flex-row lg:text-left';
 
 export const showcaseLogo =
   'h-16 w-16 rounded-xl bg-white p-[0.15rem] object-contain shadow-lg';
@@ -17,7 +18,7 @@ export const showcaseVersionBadge =
 export const showcaseDescription = 'text-sm text-white/80';
 
 export const showcaseSection =
-  'mb-10 rounded-xl border border-slate-200 bg-white p-6 shadow-sm';
+  'rounded-xl border border-slate-200 bg-white p-6 shadow-sm';
 
 export const showcaseSectionTitle =
   'mb-6 rounded-lg border-l-4 border-blue-500 bg-slate-100 px-4 py-3 text-xl font-semibold text-slate-900';
