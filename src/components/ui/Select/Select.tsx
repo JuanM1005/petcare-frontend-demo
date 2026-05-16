@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import clsx from 'clsx';
 import { HiChevronDown } from 'react-icons/hi2';
 import type { SelectProps } from './Select.types';
@@ -10,28 +11,10 @@ import {
   selectFieldContainer,
   selectHint,
   selectLabel,
+  selectText,
   selectPlaceholder,
   selectWrapper,
 } from './Select.styles';
-
-/**
- * Select primitivo del sistema de diseño.
- *
- * Menú desplegable con opciones predefinidas, label, error,
- * hint y placeholder opcional. Usa appearance-none para
- * normalizar el aspecto entre navegadores.
- *
- * @example
- * <Select
- *   label="Especie"
- *   name="species"
- *   placeholder="Selecciona una especie..."
- *   options={[
- *     { value: 'dog', label: 'Perro' },
- *     { value: 'cat', label: 'Gato' },
- *   ]}
- * />
- */
 
 const Select = ({
   label,
@@ -41,10 +24,17 @@ const Select = ({
   hint,
   fullWidth = false,
   className,
+  defaultValue = '',
+  onChange,
   ...rest
 }: SelectProps) => {
   const selectId = rest.id ?? rest.name;
-  const hasNoValue = !rest.value && rest.defaultValue;
+
+  const [selectedValue, setSelectedValue] = useState<string>(
+    String(defaultValue),
+  );
+
+  const hasNoValue = selectedValue === '';
 
   return (
     <div className={clsx(selectWrapper, fullWidth && 'w-full')}>
@@ -54,19 +44,23 @@ const Select = ({
 
       <div className={selectFieldContainer}>
         <select
+          {...rest}
           id={selectId}
+          value={selectedValue}
           className={clsx(
             selectBase,
             error && selectError,
-            placeholder && hasNoValue && selectPlaceholder,
+             hasNoValue ? selectPlaceholder : selectText,
             className,
           )}
           aria-invalid={error ? true : undefined}
           aria-describedby={
             error || hint ? `${selectId}-description` : undefined
           }
-          defaultValue={placeholder && hasNoValue ? '' : undefined}
-          {...rest}
+          onChange={(event) => {
+            setSelectedValue(event.target.value);
+            onChange?.(event);
+          }}
         >
           {placeholder && (
             <option value="" disabled>
@@ -82,7 +76,10 @@ const Select = ({
         </select>
 
         <HiChevronDown
-          className={clsx(selectChevron, error && 'peer-focus:text-red-500')}
+          className={clsx(
+            selectChevron,
+            error && 'peer-focus:text-red-500',
+          )}
           size={18}
           aria-hidden="true"
         />
