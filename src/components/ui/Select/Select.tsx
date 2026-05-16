@@ -50,7 +50,7 @@ const Select = ({
           className={clsx(
             selectBase,
             error && selectError,
-             hasNoValue ? selectPlaceholder : selectText,
+            hasNoValue ? selectPlaceholder : selectText,
             className,
           )}
           aria-invalid={error ? true : undefined}
@@ -76,10 +76,7 @@ const Select = ({
         </select>
 
         <HiChevronDown
-          className={clsx(
-            selectChevron,
-            error && 'peer-focus:text-red-500',
-          )}
+          className={clsx(selectChevron, error && 'peer-focus:text-red-500')}
           size={18}
           aria-hidden="true"
         />
