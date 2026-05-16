@@ -23,9 +23,9 @@ const Select = ({
   error,
   hint,
   fullWidth = false,
-  className,
   defaultValue = '',
   onChange,
+  className,
   ...rest
 }: SelectProps) => {
   const selectId = rest.id ?? rest.name;
