@@ -6,7 +6,7 @@ import {
   SpinnerSection,
   ModalSection,
   SelectSection,
-} from './Sections';
+} from './ComponentsSections';
 import petcareLogo from '@/assets/petcare-logo.png';
 
 import {
