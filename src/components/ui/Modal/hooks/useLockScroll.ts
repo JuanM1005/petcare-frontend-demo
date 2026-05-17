@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 /**
  * Bloquea el scroll del body mientras el componente esté montado.
  * Se restaura automáticamente al desmontar.
+ * @param isActive - Si el modal está abierto
  */
 
 export const useLockScroll = (isActive: boolean) => {

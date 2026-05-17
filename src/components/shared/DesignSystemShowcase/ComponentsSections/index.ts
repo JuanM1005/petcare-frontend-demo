@@ -5,3 +5,4 @@ export * from './BadgeSection';
 export * from './SpinnerSection';
 export * from './ModalSection';
 export * from './SelectSection';
+export * from './TextareaSection';
