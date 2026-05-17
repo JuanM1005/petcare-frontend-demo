@@ -3,7 +3,7 @@ import type { MouseEvent } from 'react';
 import clsx from 'clsx';
 
 import type { ModalProps } from './Modal.types';
-import { useEscapeKey, useLockScroll } from './hooks';
+import { useEscapeKey, useLockScroll, useFocusTrap } from './hooks';
 import ModalHeader from './ModalHeader';
 import {
   modalBodyStyles,
@@ -22,6 +22,7 @@ const Modal = ({
 }: ModalProps) => {
   useEscapeKey(onClose, isOpen);
   useLockScroll(isOpen);
+  useFocusTrap(isOpen);
 
   if (!isOpen) return null;
 
