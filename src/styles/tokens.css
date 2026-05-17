@@ -8,7 +8,7 @@
      =========================================== */
 
   /* --- Marca --- */
-  --color-primary-50:  #eef6ff;
+  --color-primary-50: #eef6ff;
   --color-primary-100: #d9ecff;
   --color-primary-200: #bce0ff;
   --color-primary-400: #60a5fa;
@@ -17,7 +17,7 @@
   --color-primary-700: #1d4ed8;
 
   /* --- Neutrales --- */
-  --color-neutral-50:  #f8fafc;
+  --color-neutral-50: #f8fafc;
   --color-neutral-100: #f1f5f9;
   --color-neutral-200: #e2e8f0;
   --color-neutral-300: #cbd5e1;
@@ -29,15 +29,15 @@
   --color-neutral-900: #0f172a;
 
   /* --- Semánticos de estado --- */
-  --color-success-50:  #f0fdf4;
+  --color-success-50: #f0fdf4;
   --color-success-500: #22c55e;
   --color-success-700: #15803d;
 
-  --color-warning-50:  #fffbeb;
+  --color-warning-50: #fffbeb;
   --color-warning-500: #f59e0b;
   --color-warning-700: #b45309;
 
-  --color-danger-50:  #fef2f2;
+  --color-danger-50: #fef2f2;
   --color-danger-500: #ef4444;
   --color-danger-700: #b91c1c;
 
@@ -46,20 +46,20 @@
      Con su descripción del proposito de uso.
      =========================================== */
 
-  --surface:          #ffffff;   /* Fondo de tarjetas, inputs, modales */
-  --surface-muted:    var(--color-neutral-50);  /* Fondo de la página */
-  --surface-hover:    var(--color-neutral-100); /* Hover de elementos */
+  --surface: #ffffff; /* Fondo de tarjetas, inputs, modales */
+  --surface-muted: var(--color-neutral-50); /* Fondo de la página */
+  --surface-hover: var(--color-neutral-100); /* Hover de elementos */
 
-  --border:           var(--color-neutral-200);
-  --border-hover:     var(--color-neutral-300);
+  --border: var(--color-neutral-200);
+  --border-hover: var(--color-neutral-300);
 
-  --text-primary:     var(--color-neutral-900); /* Títulos, texto fuerte */
-  --text-secondary:   var(--color-neutral-500); /* Texto de apoyo */
-  --text-muted:       var(--color-neutral-400); /* Placeholders, hints */
-  --text-inverse:     #ffffff;                  /* Texto sobre fondo oscuro */
+  --text-primary: var(--color-neutral-900); /* Títulos, texto fuerte */
+  --text-secondary: var(--color-neutral-500); /* Texto de apoyo */
+  --text-muted: var(--color-neutral-400); /* Placeholders, hints */
+  --text-inverse: #ffffff; /* Texto sobre fondo oscuro */
 
-  --brand:            var(--color-primary-500);
-  --brand-hover:      var(--color-primary-600);
+  --brand: var(--color-primary-500);
+  --brand-hover: var(--color-primary-600);
 
   /* --- Tipografía --- */
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -70,18 +70,18 @@
    =========================================== */
 
 .dark {
-  --surface:          var(--color-neutral-800); /* Tarjetas en oscuro */
-  --surface-muted:    var(--color-neutral-900); /* Fondo de página */
-  --surface-hover:    var(--color-neutral-700);
+  --surface: var(--color-neutral-800); /* Tarjetas en oscuro */
+  --surface-muted: var(--color-neutral-900); /* Fondo de página */
+  --surface-hover: var(--color-neutral-700);
 
-  --border:           var(--color-neutral-700);
-  --border-hover:     var(--color-neutral-600);
+  --border: var(--color-neutral-700);
+  --border-hover: var(--color-neutral-600);
 
-  --text-primary:     var(--color-neutral-50);  /* Texto claro */
-  --text-secondary:   var(--color-neutral-400);
-  --text-muted:       var(--color-neutral-500);
-  --text-inverse:     var(--color-neutral-900);
+  --text-primary: var(--color-neutral-50); /* Texto claro */
+  --text-secondary: var(--color-neutral-400);
+  --text-muted: var(--color-neutral-500);
+  --text-inverse: var(--color-neutral-900);
 
-  --brand:            var(--color-primary-400); /* Azul más claro en oscuro */
-  --brand-hover:      var(--color-primary-500);
+  --brand: var(--color-primary-400); /* Azul más claro en oscuro */
+  --brand-hover: var(--color-primary-500);
 }
