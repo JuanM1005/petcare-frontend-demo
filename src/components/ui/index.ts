@@ -23,3 +23,6 @@ export type { SelectProps, SelectOption } from './Select/Select.types';
 export type { TextareaProps } from './Textarea/Textarea.types';
 
 export { default as ThemeToggle } from './ThemeToggle/ThemeToggle';
+
+export { default as Avatar } from './Avatar/Avatar';
+export type { AvatarProps } from './Avatar/Avatar.types';

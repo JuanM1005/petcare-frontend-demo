@@ -1,7 +1,12 @@
-import { DesignSystemShowcase } from '@/components/shared/DesignSystemShowcase';
+import ThemeProvider from './context/ThemeProvider';
+import { DesignSystemShowcase } from './components/shared/DesignSystemShowcase';
 
 function App() {
-  return <DesignSystemShowcase />;
+  return (
+    <ThemeProvider>
+      <DesignSystemShowcase />
+    </ThemeProvider>
+  );
 }
 
 export default App;
