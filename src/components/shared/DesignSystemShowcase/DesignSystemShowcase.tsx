@@ -6,6 +6,7 @@ import {
   SpinnerSection,
   ModalSection,
   SelectSection,
+  AlertSection   // Importado correctamente
 } from './ComponentsSections';
 import petcareLogo from '@/assets/petcare-logo.png';
 
@@ -57,6 +58,10 @@ const DesignSystemShowcase = () => {
       <SpinnerSection />
       <ModalSection />
       <SelectSection />
+
+      {/* Sección de Alertas (Corregido: Ahora se renderiza aquí) */}
+      <hr className="border-slate-200 dark:border-slate-800 my-8" />
+      <AlertSection />
     </div>
   );
 };
