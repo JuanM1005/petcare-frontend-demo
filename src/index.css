@@ -2,16 +2,16 @@
    PetCare — Estilos globales
    ============================================ */
 
-/* 1. Fuente externa */
+/* Fuente externa */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* 2. Tailwind CSS v4 */
+/* Tailwind CSS v4 */
 @import 'tailwindcss';
 
-/* 3. Plugin de animaciones */
+/* Plugin de animaciones */
 @plugin 'tailwindcss-animate';
 
-/* 4. Tokens de diseño de PetCare */
+/* Tokens de diseño de PetCare */
 @import './styles/tokens.css';
 
 /* ============================================

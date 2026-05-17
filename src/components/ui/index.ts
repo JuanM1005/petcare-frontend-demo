@@ -21,3 +21,5 @@ export type { SelectProps, SelectOption } from './Select/Select.types';
 
 // export { default as Textarea } from './Textarea/Textarea';
 export type { TextareaProps } from './Textarea/Textarea.types';
+
+export { default as ThemeToggle } from './ThemeToggle/ThemeToggle';
