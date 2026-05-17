@@ -6,6 +6,7 @@ import {
   SpinnerSection,
   ModalSection,
   SelectSection,
+  TextareaSection,
 } from './ComponentsSections';
 import petcareLogo from '@/assets/petcare-logo.png';
 
@@ -57,6 +58,7 @@ const DesignSystemShowcase = () => {
       <SpinnerSection />
       <ModalSection />
       <SelectSection />
+      <TextareaSection />
     </div>
   );
 };
