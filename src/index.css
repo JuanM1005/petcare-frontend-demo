@@ -9,10 +9,9 @@
 @import 'tailwindcss';
 
 /* 3. Plugin de animaciones */
-/* Habilita: animate-in, fade-in, zoom-in-*, slide-in-from-*, etc. */
 @plugin 'tailwindcss-animate';
 
-/* 4. Tokens de identidad del proyecto */
+/* 4. Tokens de diseño de PetCare */
 @import './styles/tokens.css';
 
 /* ============================================
@@ -20,8 +19,6 @@
    ============================================ */
 
 @theme {
-  /* Conecta --font-family con font-sans de Tailwind */
-  /* Resultado: clase font-sans aplica Inter en toda la app */
   --font-sans: var(--font-family);
 }
 
@@ -32,31 +29,23 @@
 
 @layer base {
   html {
-    /* Base rem — define la escala de todo el proyecto */
     font-size: 16px;
-    /* Suavizado de fuente — Preflight no lo incluye */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    /* Color de texto y fondo — identidad visual de PetCare */
-    color: var(--color-text-primary);
-    background-color: var(--color-surface);
-    /* Tipografía base global */
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
+    color: var(--text-primary);
+    background-color: var(--surface-muted);
+    line-height: 1.5;
   }
 
   #root {
-    /* Garantiza que la app ocupe toda la pantalla */
     min-height: 100svh;
   }
 
   :focus-visible {
-    /* Accesibilidad: anillo de foco visible para navegación con teclado */
-    /* Clave en una app clínica donde el veterinario puede navegar con Tab */
-    outline: 2px solid var(--color-primary-500);
+    outline: 2px solid var(--brand);
     outline-offset: 2px;
   }
 }
