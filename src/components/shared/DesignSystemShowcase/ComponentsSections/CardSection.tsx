@@ -25,9 +25,11 @@ export const CardSection = () => {
       <Subsection title="Padding">
         <div className={showcaseRow}>
           <Card padding="none">
-            <div className="p-3 bg-blue-50">
-              Padding none (contenido maneja su propio espacio)
-            </div>
+            <Card padding="none">
+              <div className="p-3 bg-surface-hover text-text-primary rounded-lg">
+                Padding none (contenido maneja su propio espacio)
+              </div>
+            </Card>
           </Card>
           <Card padding="sm">
             <p>Padding small</p>
@@ -61,15 +63,15 @@ export const CardSection = () => {
       <Subsection title="Ejemplo real: Metric Card">
         <div className={showcaseRow}>
           <Card>
-            <p className="text-sm text-neutral-500">Citas hoy</p>
+            <p className="text-sm text-text-secondary">Citas hoy</p>
             <p className="text-2xl font-bold">12</p>
           </Card>
           <Card>
-            <p className="text-sm text-neutral-500">Pacientes nuevos</p>
+            <p className="text-sm text-text-secondary">Pacientes nuevos</p>
             <p className="text-2xl font-bold">3</p>
           </Card>
           <Card>
-            <p className="text-sm text-neutral-500">Consultas completadas</p>
+            <p className="text-sm text-text-secondary">Consultas completadas</p>
             <p className="text-2xl font-bold">8</p>
           </Card>
         </div>

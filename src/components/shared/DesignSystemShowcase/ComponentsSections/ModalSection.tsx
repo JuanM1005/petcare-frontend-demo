@@ -21,7 +21,7 @@ export const ModalSection = () => {
             onClose={() => setBasicOpen(false)}
             title="Modal básico"
           >
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-text-secondary">
               Este es un modal con título, botón de cerrar y cierre con Escape o
               click en el overlay.
             </p>
@@ -41,7 +41,7 @@ export const ModalSection = () => {
             title="Acción requerida"
             closeOnOverlay={false}
           >
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-text-secondary">
               Este modal solo se cierra con el botón ✕ o con Escape. Clickear
               fuera no lo cierra. Útil para acciones que requieren una decisión
               explícita.
@@ -61,7 +61,7 @@ export const ModalSection = () => {
             onClose={() => setConfirmOpen(false)}
             title="¿Eliminar paciente?"
           >
-            <p className="mb-4 text-sm text-slate-600">
+            <p className="mb-4 text-sm text-text-secondary">
               Estás a punto de eliminar a <strong>Firulais</strong> y todo su
               historial clínico. Esta acción no se puede deshacer.
             </p>

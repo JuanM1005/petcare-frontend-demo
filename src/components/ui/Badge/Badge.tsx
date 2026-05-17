@@ -20,6 +20,7 @@ const Badge = ({
   variant = 'neutral',
   size = 'sm',
   pulse = false,
+  withPing = false,
   ...rest
 }: BadgeProps) => {
   return (
@@ -32,7 +33,7 @@ const Badge = ({
       )}
       {...rest}
     >
-      <BadgePing variant={variant} />
+      {withPing && <BadgePing variant={variant} />}
 
       {children}
     </span>

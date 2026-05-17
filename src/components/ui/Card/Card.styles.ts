@@ -1,9 +1,9 @@
 export const cardBase =
-  'rounded-xl bg-white transition-[box-shadow,border-color]';
+  'rounded-xl bg-surface transition-[box-shadow,border-color]';
 
 export const cardVariants = {
-  default: 'border border-slate-200 shadow-sm',
-  outline: 'border border-slate-200',
+  default: 'border border-border-base shadow-sm',
+  outline: 'border border-border-base',
   ghost: 'border border-transparent',
 };
 
@@ -15,4 +15,4 @@ export const cardPaddings = {
 };
 
 export const cardClickable =
-  'cursor-pointer hover:border-slate-300 hover:shadow-md active:shadow-sm';
+  'cursor-pointer hover:border-border-hover hover:shadow-md active:shadow-sm';

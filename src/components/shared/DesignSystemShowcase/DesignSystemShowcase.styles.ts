@@ -18,16 +18,16 @@ export const showcaseVersionBadge =
 export const showcaseDescription = 'text-sm text-white/80';
 
 export const showcaseSection =
-  'rounded-xl border border-slate-200 bg-white p-6 shadow-sm';
+  'rounded-xl border border-border-base bg-surface p-6 shadow-sm';
 
 export const showcaseSectionTitle =
-  'mb-6 rounded-lg border-l-4 border-blue-500 bg-slate-100 px-4 py-3 text-xl font-semibold text-slate-900';
+  'mb-6 rounded-lg border-l-4 border-brand bg-surface-hover px-4 py-3 text-xl font-semibold text-text-primary';
 
 export const showcaseSectionContent = 'flex flex-col gap-6';
 
 export const showcaseSubsection = 'flex flex-col gap-3';
 
 export const showcaseSubsectionTitle =
-  'text-sm font-medium tracking-[0.05em] text-slate-500 uppercase';
+  'text-sm font-medium tracking-[0.05em] text-text-secondary uppercase';
 
 export const showcaseRow = 'flex flex-wrap items-center gap-3';

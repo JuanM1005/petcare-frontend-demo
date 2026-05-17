@@ -15,6 +15,20 @@ export const BadgeSection = () => {
         </div>
       </Subsection>
 
+      <Subsection title="Con ping (indicador activo)">
+        <div className={showcaseRow}>
+          <Badge variant="success" withPing>
+            En línea
+          </Badge>
+          <Badge variant="danger" withPing pulse>
+            Emergencia activa
+          </Badge>
+          <Badge variant="info" withPing>
+            Consulta en curso
+          </Badge>
+        </div>
+      </Subsection>
+
       <Subsection title="Tamaños">
         <div className={showcaseRow}>
           <Badge variant="info" size="sm">
@@ -31,7 +45,7 @@ export const BadgeSection = () => {
           <div className="flex justify-between items-center">
             <div>
               <h3>Firulais</h3>
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-text-secondary">
                 Golden Retriever, 5 años
               </p>
             </div>
@@ -59,7 +73,7 @@ export const BadgeSection = () => {
           <Card padding="sm">
             <div className="flex justify-between items-center">
               <span>11:30 AM, Rocky, Emergencia</span>
-              <Badge variant="danger" pulse>
+              <Badge variant="danger" withPing pulse>
                 Urgente
               </Badge>
             </div>
