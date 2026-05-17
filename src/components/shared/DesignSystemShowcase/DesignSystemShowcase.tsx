@@ -5,7 +5,8 @@ import {
   BadgeSection,
   SpinnerSection,
   ModalSection,
-} from './sections';
+  SelectSection,
+} from './ComponentsSections';
 import petcareLogo from '@/assets/petcare-logo.png';
 
 import {
@@ -33,7 +34,7 @@ const DesignSystemShowcase = () => {
 
         <div className={showcaseHeaderText}>
           <h1 className={showcaseTitle}>
-            PetCare - Design System
+            PetCare - Sistema de Diseño
             <span className={showcaseVersionBadge}>v0.1</span>
           </h1>
 
@@ -49,6 +50,7 @@ const DesignSystemShowcase = () => {
       <BadgeSection />
       <SpinnerSection />
       <ModalSection />
+      <SelectSection />
     </div>
   );
 };

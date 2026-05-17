@@ -72,7 +72,8 @@ src/
 ├── hooks/                  # Hooks globales (useDebounce, useOnlineStatus)
 ├── lib/
 │   ├── api/                # Cliente HTTP y endpoints
-│   ├── db/                 # IndexedDB y sincronización futura
+│   ├── constants/          # Constantes globales del dominio que no son opciones de UI
+│   └── db/                 # IndexedDB y sincronización futura
 │   └── utils/              # Formatters, validadores, constantes
 ├── styles/                 # Tokens CSS y variables globales
 ├── types/                  # Interfaces TypeScript compartidas
@@ -110,6 +111,22 @@ components/ui/Button/
 ├── Button.styles.ts        # Clases Tailwind organizadas por variante/estado
 └── index.ts                # Barrel file
 ```
+
+### Datos (constantes) reutilizables del dominio
+
+PetCare organiza los datos estáticos reutilizables dentro de `src/lib/`. Las opciones usadas en formularios, filtros o componentes `Select` se guardan en `lib/options/` con el sufijo `.options.ts`; las constantes generales del dominio viven en `lib/constants/`.
+
+```txt
+lib/constants/
+├── species.options.ts             # Especies de pacientes
+├── consultationTypes.options.ts   # Tipos de consulta
+├── appointmentStatus.options.ts   # Estados de cita
+└── index.ts                       # Barrel file
+```
+**Convenciones:**
+- Nombres en MAYÚSCULAS para identificarlas como constantes inmutables (`SPECIES`, `CONSULTATION_TYPES`)
+- Tipadas con `SelectOption[]` cuando son opciones de un Select
+- Importadas desde el barrel: `import { SPECIES } from '@/lib/constants'`
 
 ### Responsabilidad de cada archivo
 

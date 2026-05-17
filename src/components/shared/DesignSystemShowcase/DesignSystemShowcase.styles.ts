@@ -1,7 +1,7 @@
 export const showcasePage = 'mx-auto max-w-[960px] px-6 py-8';
 
 export const showcaseHeader =
-  'mb-10 flex items-center gap-6 rounded-2xl bg-linear-to-br from-blue-600 to-blue-400 p-8 shadow-lg';
+  'mb-10 flex items-center justify-center gap-6 rounded-2xl bg-linear-to-br from-blue-600 to-blue-400 p-8 shadow-lg';
 
 export const showcaseLogo =
   'h-16 w-16 rounded-xl bg-white p-[0.15rem] object-contain shadow-lg';

@@ -21,6 +21,16 @@ export const SpinnerSection = () => {
         </div>
       </Subsection>
 
+      <Subsection title="Variantes">
+        <div className={showcaseRow}>
+          <Spinner variant="primary" label="Primary" />
+          <Spinner variant="success" label="Success" />
+          <Spinner variant="warning" label="Warning" />
+          <Spinner variant="danger" label="Danger" />
+          <Spinner variant="neutral" label="Neutral" />
+        </div>
+      </Subsection>
+
       <Subsection title="Ejemplo real: Carga dentro de una Card">
         <div className={showcaseRow}>
           <Card>
