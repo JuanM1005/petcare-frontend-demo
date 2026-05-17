@@ -14,7 +14,9 @@ export const textareaHint = 'text-xs text-text-muted';
 
 export const textareaErrorMessage = 'text-xs text-red-500';
 
-export const counterBase = 'text-xs text-text-muted ml-auto transition-colors';
+export const counterBase = 'text-xs ml-auto transition-colors';
+
+export const counterNormal = 'text-text-muted';
 
 export const counterWarning = 'text-amber-500';
 
