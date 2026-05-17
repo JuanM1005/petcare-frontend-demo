@@ -2,17 +2,16 @@
    PetCare — Estilos globales
    ============================================ */
 
-/* 1. Fuente externa */
+/* Fuente externa */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* 2. Tailwind CSS v4 */
+/* Tailwind CSS v4 */
 @import 'tailwindcss';
 
-/* 3. Plugin de animaciones */
-/* Habilita: animate-in, fade-in, zoom-in-*, slide-in-from-*, etc. */
+/* Plugin de animaciones */
 @plugin 'tailwindcss-animate';
 
-/* 4. Tokens de identidad del proyecto */
+/* Tokens de diseño de PetCare */
 @import './styles/tokens.css';
 
 /* ============================================
@@ -20,9 +19,24 @@
    ============================================ */
 
 @theme {
-  /* Conecta --font-family con font-sans de Tailwind */
-  /* Resultado: clase font-sans aplica Inter en toda la app */
+  /* Tipografía */
   --font-sans: var(--font-family);
+
+  /* Colores semánticos -> generan clases bg-*, text-*, etc... */
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-hover: var(--surface-hover);
+
+  --color-border-base: var(--border);
+  --color-border-hover: var(--border-hover);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
 }
 
 /* ============================================
@@ -32,31 +46,23 @@
 
 @layer base {
   html {
-    /* Base rem — define la escala de todo el proyecto */
     font-size: 16px;
-    /* Suavizado de fuente — Preflight no lo incluye */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    /* Color de texto y fondo — identidad visual de PetCare */
-    color: var(--color-text-primary);
-    background-color: var(--color-surface);
-    /* Tipografía base global */
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
+    color: var(--text-primary);
+    background-color: var(--surface-muted);
+    line-height: 1.5;
   }
 
   #root {
-    /* Garantiza que la app ocupe toda la pantalla */
     min-height: 100svh;
   }
 
   :focus-visible {
-    /* Accesibilidad: anillo de foco visible para navegación con teclado */
-    /* Clave en una app clínica donde el veterinario puede navegar con Tab */
-    outline: 2px solid var(--color-primary-500);
+    outline: 2px solid var(--brand);
     outline-offset: 2px;
   }
 }

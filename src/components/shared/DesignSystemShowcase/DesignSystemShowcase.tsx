@@ -19,6 +19,8 @@ import {
   showcaseVersionBadge,
 } from './DesignSystemShowcase.styles';
 
+import { ThemeToggle } from '@/components/ui';
+
 /**
  * Página de referencia visual del sistema de diseño.
  *
@@ -41,6 +43,10 @@ const DesignSystemShowcase = () => {
           <p className={showcaseDescription}>
             Referencia visual de componentes UI
           </p>
+        </div>
+
+        <div className="ml-auto">
+          <ThemeToggle />
         </div>
       </header>
 

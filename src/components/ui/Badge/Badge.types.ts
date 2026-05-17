@@ -9,4 +9,5 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: BadgeVariant;
   size?: BadgeSize;
   pulse?: boolean;
+  withPing?: boolean;
 }

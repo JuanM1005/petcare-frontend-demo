@@ -1,13 +1,14 @@
 export const buttonBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg border font-medium leading-tight transition-all duration-300 ease-out active:scale-95 cursor-pointer cyrsdisabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60';
+  'inline-flex items-center justify-center gap-2 rounded-lg border font-medium leading-tight transition-all duration-300 ease-out active:scale-95 cursor-pointer disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60';
 
 export const buttonVariants = {
   primary:
     'border-blue-500 bg-blue-500 text-white hover:border-blue-600 hover:bg-blue-600 active:bg-blue-700',
-  secondary: 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100',
+  secondary:
+    'border-border-base bg-surface text-text-primary hover:bg-surface-hover',
   danger:
     'border-red-600 bg-red-600 text-white hover:border-red-700 hover:bg-red-700',
-  ghost: 'border-transparent bg-transparent text-blue-500 hover:bg-slate-100',
+  ghost: 'border-transparent bg-transparent text-brand hover:bg-surface-hover',
 };
 
 export const buttonSizes = {
