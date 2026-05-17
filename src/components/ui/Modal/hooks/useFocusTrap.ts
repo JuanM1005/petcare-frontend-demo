@@ -21,7 +21,7 @@ export const useFocusTrap = (isActive: boolean) => {
     if (!root) return;
 
     /** Bloquea la aplicación utilizando el atributo "inert"
-     Esta es una propiedad de la API del navegador que inactiva temporalmente un elemento del DOM y a todos sus descendientes, indicándole al navegador que ignore cualquier evento de entrada de usuario sobre ellos. */
+         Esta es una propiedad de la API del navegador que inactiva temporalmente un elemento del DOM y a todos sus descendientes, indicándole al navegador que ignore cualquier evento de entrada de usuario sobre ellos. */
     // El navegador ahora ignora clics, TABs y eventos de teclado en el fondo.
     root.inert = true;
 
