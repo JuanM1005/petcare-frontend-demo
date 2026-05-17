@@ -6,6 +6,7 @@ import {
   SpinnerSection,
   ModalSection,
   SelectSection,
+  AvatarSection, // <--- ¡AQUÍ ESTÁ EL DETALLE QUE FALTABA!
 } from './ComponentsSections';
 import petcareLogo from '@/assets/petcare-logo.png';
 
@@ -57,6 +58,10 @@ const DesignSystemShowcase = () => {
       <SpinnerSection />
       <ModalSection />
       <SelectSection />
+
+      {/* Tu componente integrado con estilo */}
+      <hr className="border-slate-200 dark:border-slate-800 my-8" />
+      <AvatarSection />
     </div>
   );
 };
