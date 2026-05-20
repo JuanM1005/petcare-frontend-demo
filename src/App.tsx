@@ -1,4 +1,4 @@
-import { DesignSystemShowcase } from '@/components/shared/DesignSystemShowcase';
+import { DesignSystemShowcase } from '@/components/shared';
 
 function App() {
   return <DesignSystemShowcase />;

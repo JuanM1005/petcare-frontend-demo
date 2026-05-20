@@ -7,6 +7,7 @@ import {
   ModalSection,
   SelectSection,
   TextareaSection,
+  CheckboxSection,
 } from './ComponentsSections';
 import petcareLogo from '@/assets/petcare-logo.png';
 
@@ -59,6 +60,7 @@ const DesignSystemShowcase = () => {
       <ModalSection />
       <SelectSection />
       <TextareaSection />
+      <CheckboxSection />
     </div>
   );
 };
