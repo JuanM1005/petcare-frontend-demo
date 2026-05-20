@@ -23,3 +23,6 @@ export { default as Textarea } from './Textarea/Textarea';
 export type { TextareaProps } from './Textarea/Textarea.types';
 
 export { default as ThemeToggle } from './ThemeToggle/ThemeToggle';
+
+export { default as Checkbox } from './Checkbox/Checkbox';
+export type { CheckboxProps } from './Checkbox/Checkbox.types';

@@ -3,7 +3,9 @@ import type { MouseEvent } from 'react';
 import clsx from 'clsx';
 
 import type { ModalProps } from './Modal.types';
-import { useEscapeKey, useLockScroll, useFocusTrap } from './hooks';
+import { useEscapeKey } from './hooks/useEscapeKey';
+import { useLockScroll } from './hooks/useLockScroll';
+import { useFocusTrap } from './hooks/useFocusTrap';
 import ModalHeader from './ModalHeader';
 import {
   modalBodyStyles,
@@ -37,7 +39,11 @@ const Modal = ({
   };
 
   return createPortal(
-    <div className={modalOverlayStyles} onClick={handleOverlayClick}>
+    <div
+      className={modalOverlayStyles}
+      onClick={handleOverlayClick}
+      role="presentation"
+    >
       <section
         role="dialog"
         aria-modal="true"

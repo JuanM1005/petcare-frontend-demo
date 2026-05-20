@@ -6,3 +6,4 @@ export * from './SpinnerSection';
 export * from './ModalSection';
 export * from './SelectSection';
 export * from './TextareaSection';
+export * from './CheckboxSection';

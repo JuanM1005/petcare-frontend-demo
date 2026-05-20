@@ -55,7 +55,7 @@ const Textarea = ({
         {...rest}
       ></textarea>
 
-      {(error || hint || maxLength) && (
+      {(error || hint || Boolean(maxLength)) && (
         <div className={textareaFooter}>
           {error ? (
             <span
